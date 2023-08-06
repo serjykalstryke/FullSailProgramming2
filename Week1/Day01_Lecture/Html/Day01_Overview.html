@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Methods Overview</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <!-- <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><b>Methods</b></div>
+        <a href="..\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day01_Methods.html" class="active">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="Day01_MethodsOptionalParam.html" class="indent">Optional</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day02_Lecture\Html\Day02_Arrays.html"><b>Arrays and Lists</b></a></div>
+        <p></p><br>
+    </div>  
+    <div class="main">-->
+    <div>
+        
+        <h2>Variables</h2>
+        <pre><code class="language-csharp">int age; // a variable needs 2 things: a type and a name</code></pre>
+        <pre><code class="language-csharp">int age = 5; // when declaring a variable, you can give it an initial value</code></pre>
+        <pre><code class="language-csharp">int age; 
+age = 12; //assign a value to the age variable</code></pre>
+
+        <h2>Methods</h2>
+        <h3>Return Types</h3>
+        <pre><code class="language-csharp">//a method that returns no data. Set the return type to "void"
+void PrintSomething()
+{
+    Console.WriteLine("Hello Gotham!");
+}</code></pre>
+<pre><code class="language-csharp">//a method that returns some data. 
+//Set the return type to match the type of the data that is returned
+int WhatIsStevesAge()
+{
+    return 12; //returns an int so the return type of the method should be "int"
+}</code></pre>
+
+        <h3>Parameters</h3>
+        <pre><code class="language-csharp">//a method that has no parameters. use empty ( )
+void PrintSomething()
+{
+}</code></pre>
+<pre><code class="language-csharp">//Parameters are just variables. Therefore, a parameter must have 2 things: a type and a name.
+//here's a method that takes an int parameter called age. 
+void PrintSomething(int age)
+{
+    Console.WriteLine($"Steve's age is {age}!");
+}
+
+//To call this method, an int constant or variable must be passed to the method
+PrintSomething(12);//with a constant int
+
+int stevesAge = 5;
+PrintSomething(stevesAge);//with an int variable
+</code></pre>
+        <h3>Parameters: Pass by Value</h3>
+<pre><code class="language-csharp">//Pass by Value means the value of the parameter is COPIED to it when the method is called
+void PrintSomething(int age) //age is a pass-by-value parameter
+{
+    Console.WriteLine($"Steve's age is {age}!");
+}
+int stevesAge = 5;
+PrintSomething(stevesAge);//the value of stevesAge is COPIED to the age parameter in PrintSomething
+
+//what is printed...
+Steve's Age is 5!
+</code></pre>
+        <h3>Parameters: Pass by Reference</h3>
+<pre><code class="language-csharp">//Pass by Reference means the name of the parameter is an ALIAS 
+//to the variable used when the method is called
+//use the "ref" keyword to define the parameter as pass-by-reference
+void GetAge(ref int age) //age is a pass-by-reference parameter. 
+{
+    age = 12; //changes to ref parameters modify the variable that is used when the method is called
+}
+
+//NOTE: the variable MUST be initialized before using it as an argument for a ref parameter
+int stevesAge = 25; 
+GetAge(ref stevesAge);//must use the "ref" keyword on reference parameters when calling the method.
+Console.WriteLine($"Steve's age is {stevesAge}."); // prints "Steve's age is 12."
+</code></pre>
+
+        <h3>Parameters: Out parameters</h3>
+<pre><code class="language-csharp">//Out parameters are special Pass-by-Reference parameters.
+//use the "out" keyword to define the parameter as out.
+void GetAge(out int age) //age is out parameter. 
+{
+    age = 12; //the method MUST assign a value to every out parameter
+}
+
+int stevesAge; //do NOT need to initialize the variable before using it as an argument for out parameters
+GetAge(out stevesAge);//must use the "out" keyword on out parameters when calling the method
+Console.WriteLine($"Steve's age is {stevesAge}."); // prints "Steve's age is 12."
+</code></pre>
+
+        <h3>Parameters: Optional parameters</h3>
+<pre><code class="language-csharp">//optional parameters do not need to be passed when calling the method.
+//ALL optional parameters must appear at the end of the parameter list
+//the name parameter is REQUIRED. The age parameter is optional.
+void PrintSomething(string name, int age = 12) 
+{
+    Console.WriteLine($"{name}'s age is {age}!");
+}
+
+PrintSomething("Steve", 7);  //prints "Steve's age is 7!"
+PrintSomething("Steve");     //prints "Steve's age is 12!"   the default value of 12 is used.
+</code></pre>
+
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

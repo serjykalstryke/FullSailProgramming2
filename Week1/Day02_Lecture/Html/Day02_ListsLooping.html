@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Lists - Looping</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html">Lists</a>
+        <a href="Day02_ListsCount.html">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html" class="active">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Lists - Looping</H1>
+        You can use a <strong><code>for loop</code></strong> or a <strong><code>foreach loop</code></strong> to access each of the items in a List.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/86220e8f-87c9-46a8-85a8-4c1b9c93f745?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Examples</h2>
+        <h3>for loop</h3>
+        Use the <strong><code>Count</code></strong> property when looping with a <strong><code>for loop</code></strong>.
+        <br>
+        Use the <strong><code>[ ]</code></strong> indexer to access the values stored in the List.
+        <pre><code class="language-csharp">List&lt;int&gt; nums = new List&lt;int&gt;() {5, 4, 3, 2, 1};
+for(int i = 0; i &lt; nums.Count; i++)
+{
+    //modify the value stored in the List
+    nums[i] *= 2;
+
+    //access the value stored in the List
+    Console.WriteLine(nums[i]);
+}</code></pre>
+        <h3>foreach loop</h3>
+        The <strong><code>foreach loop</code></strong> will give you each value in the List and assign it to the foreach variable.
+        <br>
+        In this example, the foreach variable is called <strong>number</strong>. Each time through the loop, the next value in the List will be assigned to <strong>number</strong>.
+        <br>
+        <div class="block warning">
+            <p><b>NOTE: </b>Modifying the foreach variable will <strong><i>NOT</i></strong> modify the value stored in the List.</p>
+        </div>
+        <pre><code class="language-csharp">List&lt;int&gt; nums = new List&lt;int&gt;() {5, 4, 3, 2, 1};
+foreach(int number in nums)
+{
+    number *= 2; //this will NOT modify the value in the List
+    Console.WriteLine(number);
+}</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fa22794-d9c4-4f30-ad86-22d3450c7873?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add a loop on line 11 to print out each item on a new line. 
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc7twxf9?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    List&lt;string&gt; best = new List&lt;string&gt;() {"Batman", "Flash", "Superman", "Wonder Woman", "Aquaman" };
+    for(int i=0;i&lt;best.Count;i++)
+    {
+        Console.WriteLine(best[i]);
+    }
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/50ea27a7-4c4a-464e-bb91-30ab67f8122f?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

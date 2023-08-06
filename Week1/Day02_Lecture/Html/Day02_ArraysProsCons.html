@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Arrays Pros/Cons</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html" class="active">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html">Lists</a>
+        <a href="Day02_ListsCount.html">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Arrays Pros/Cons</H1>
+        <h2>PROS</h2>
+        <h3>Indexer</h3>
+        One of the <b>main advantages</b> to using arrays is the <b>speed of lookup</b> using the indexer. <code class="language-csharp">int num = numbers[1];</code><br>
+        The performance of the indexer is O(1) or order-of(1). That is often referred to as <b>constant</b> which means the performance does NOT change -- it is constant.<br>
+        It doesn't matter if the array has 10 items or 10,000 items. It takes the same amount of time to use the indexer.
+        <h3>Statically sized data</h3>
+        Another pro of arrays is that arrays are good if the number of items does not need to change often.<br>
+        For instance, if you always need 10 items and don't need to increase or decrease the number of items (statically sized), then an array is a good option.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/848e5ee9-1776-4a0c-9318-60a5620c416d?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <h2>CONS</h2>
+        <h3>Dynamically sized data</h3>
+        If you need to grow or shrink your array, then an array does not perform well.<br>
+        You need to do the following:
+        <ul>
+            <li>Create a temp array with the new size</li>
+            <li>Copy the items to the temp array</li>
+            <li>Assign the temp array to the array variable</li>
+        </ul>
+        <pre><code class="language-csharp">int[] temp = new int[7];
+for(int i=0;i &lt; nums.Length; i++)
+    temp[i] = nums[i];
+nums = temp;</code></pre>
+        The code above would get more complicated if you needed to insert the new item into the array or you were shrinking the array as the indexes would not match.<br>
+        This is error prone and would cause a duplication of the data.<br>
+        In addition, you would have to do this code <b><i>every time the array changed size</i></b>.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/35273f9f-22e4-4d76-8e3f-f3ac515abda7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+                
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

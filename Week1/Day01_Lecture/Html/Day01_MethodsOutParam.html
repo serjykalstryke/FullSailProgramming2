@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Out Parameters</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><b>Methods</b></div>
+        <a href="..\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="Day01_MethodsOutParam.html" class="indent active">Out parameters</a>
+        <a href="Day01_MethodsOptionalParam.html" class="indent">Optional</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day02_Lecture\Html\Day02_Arrays.html"><b>Arrays and Lists</b></a></div>
+        <p></p><br>
+    </div> 
+    <div  class="main">
+        <H1>Out Parameters</H1>  
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f40d9879-0d17-415f-80d9-ec15b3cf74f5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        
+        <h2>Out Parameters</h2>
+        Out parameters are <b>special by reference parameters.</b><br>
+        Here are the differences:
+        <ul>
+            <li>The variable passed to the method does <i>NOT</i> need to be initialized. When calling a method with a ref parameter, the variable <i>must</i> be initialized. That is not required for out parameters.</li>
+            <li>The method with out parameters is <b><i>required</i></b> to assign a value to the out parameter before returning.</li>
+        </ul>
+        
+        <h2>Examples</h2>
+        When calling int.TryParse, you don't need to initialize the int parameter.<br>
+        In this example, TryParse will return false which will be assigned to isGood. It will also set number to 0 because "Bob" is not a number.
+        <pre><code class="language-csharp">int number;
+bool isGood = int.TryParse("Bob", out number);</code></pre>
+        Note: when calling a method that has an out parameter, you must use the <b>out</b> keyword.<p>
+        In this example, the method is <b>required</b> to assign a value to the out parameter. If the variable <b>superName</b> is not assigned a value, then you'll get a build error.
+        <pre><code class="language-csharp">public static void BestSuperhero(out string superName)
+{
+    superName = "Batman";
+}</code></pre>
+        
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e70788ce-6680-4c02-93c6-431990071b5c?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        
+        <h2>Challenges</h2>
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Change lines 13 and 16 so that the message printed is <b>The best is Batman.</b>
+            <p>             
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc26eeze?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true&listenToEvents=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    string super = "Superman";
+    WhoIsTheBest(out super);
+    Console.WriteLine($"The best is {super}.");
+}
+public static void WhoIsTheBest(out string superhero)
+{
+    superhero = "Batman";
+}</code></pre>       
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c8bab2c5-29c0-4eea-9a21-99a3661584d7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

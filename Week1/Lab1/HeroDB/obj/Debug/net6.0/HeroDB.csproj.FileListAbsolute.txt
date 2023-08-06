@@ -1,0 +1,13 @@
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\bin\Debug\net6.0\heroes.json
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\bin\Debug\net6.0\HeroDB.deps.json
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\bin\Debug\net6.0\HeroDB.dll
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\bin\Debug\net6.0\HeroDB.pdb
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.AssemblyInfo.cs
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.dll
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\refint\HeroDB.dll
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\HeroDB.pdb
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week1\Lab1\HeroDB\obj\Debug\net6.0\ref\HeroDB.dll

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Arrays</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html" class="active">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html">Lists</a>
+        <a href="Day02_ListsCount.html">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Arrays</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/3ff076be-6236-444e-8d72-813f2192f4e9?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <br>Arrays are blocks of data stored <b><i>contiguously</i></b> in memory. So if you create an array to hold 4 integers, each integer will be right next to each other in memory.<br>
+        To lookup a value in the array, you must use an index into the array. Arrays are <b>zero-based</b> indexed collections. That means the first index is 0.<br>
+        So, for the int array that holds 4 integers, the index range is 0 to 3.
+        
+        <h2>Examples</h2>
+        How to create an array
+        <pre><code class="language-csharp">int[] highScores = new int[10]; //an array that holds 10 ints.
+string[] JLA = new string[] {"Batman", "Superman", "Wonder Woman"}; //a string array that holds 3 strings</code></pre>
+        How to loop over an array
+        NOTE: 
+        <ul>
+            <li>use the <code>Length</code> property to know how many items are in the array.</li>
+            <li>use the indexer <code>[ ]</code> to access an element in the array.</li>
+        </ul>
+        <pre><code class="language-csharp">for(int i=0;i&lt;JLA.Length;i++)
+{
+    Console.WriteLine(JLA[i]);
+}</code></pre>
+        How to assign a value to an item
+        <pre><code class="language-csharp">JLA[1] = "Aquaman";</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/bca5841d-c66f-4b9e-9b97-3da442112d42?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            <ul>
+                <li>Add code on line 13 to change Spiderman to Spider-ham</li>
+                <li>Fix line 14 so that you loop over the array</li>
+                <li>Add code on line 16 to print each item in the array</li>
+            </ul>
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc2j4mj9?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    string[] best = new string[] {"Batman", "Hulk", "Spiderman"};
+    best[2] = "Spider-ham";
+    for(int i=0;i&lt;best.Length;i++)
+    {
+        Console.WriteLine(best[i]);
+    }
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c98dadaa-41d0-4fad-86a4-4417bca1d101?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

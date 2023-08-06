@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>List&lt;T&gt;</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html" class="active">Lists</a>
+        <a href="Day02_ListsCount.html">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>List&lt;T&gt;</H1>
+        The List type in C# is a collection that <b>auto-resizes</b> itself. Sometimes these are referred to as <b>dynamic arrays</b>.<br>
+        Internally, the List class uses an array to store the data. So it has the same pros/cons of the array.<br>
+        The <b>benefit</b> to the developer is that the code needed to resize the array has been written already and is handled automatically.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2248f25a-f265-4b04-9df2-955da694e675?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Examples</h2>
+        <div class="block warning">
+            <p><b>NOTE: </b>To use the List class, you need <code class="language-csharp">using System.Collections.Generic;</code> at the top of the file.</p>
+        </div>
+        <h3>Creating a List</h3>
+        The List&lt;T&gt; class is a <b>generic</b> class.
+        <br>To use it for a variable, you must replace the <B>T</B> with whatever type you want to store in the List.<br>
+        This example is creating 2 different Lists. One holds <code>strings</code> and the other holds <code>ints</code>.
+        <pre><code class="language-csharp">List&lt;string&gt; names = new List&lt;string&gt;() { "Bruce", "Batman", "The Dark Knight"};
+List&lt;int&gt; highScores = new List&lt;int&gt;();</code></pre>
+        <h3>Adding items to a List</h3>
+        You can add items in the initializer when you create a List or you can use the Add method.
+        <pre><code class="language-csharp">//add items in the initializer when you create the list object
+List&lt;string&gt; names = new List&lt;string&gt;() { "Bruce", "Batman", "The Dark Knight"};
+
+//add items with the add method
+names.Add("Clark");
+names.Add("Superman");</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a1beda23-4155-41a4-8399-41706faa01ad?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            <ul>
+                <li>Fix line 10 to create a List that holds bool values. </li>
+                <li>On line 11, add a <code>true</code> to the List.</li>
+            </ul>
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc5hm54h?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    List&lt;bool&gt; flags = new List&lt;bool&gt;();
+    flags.Add(true);
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/24371272-95c1-4643-ad1e-493196818ec3?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cloning arrays and Lists</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html">Lists</a>
+        <a href="Day02_ListsCount.html">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html" class="active">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Cloning arrays and Lists</H1>
+        <H2>Creating Lists from Arrays</H2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/44249291-822f-406f-af25-090b956f8159?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        If you have an array but need a List instead (ex: a method requires a List parameter), you can create a List from the array using one of the following ways:
+        <ul>
+            <li>call <code>ToList</code> on the array</li>
+            <li>Pass the array to the List constructor</li>
+            <li>Add each item from the array to a new list</li>
+        </ul>
+        
+        <h2>Examples</h2>
+        <h3>call <code>ToList</code> on the array</h3>        
+        <div class="block warning">
+            <p><b>NOTE: </b>To use the <code>ToList</code> method, you need <code class="language-csharp">using System.Linq;</code> at the top of the file.</p>
+        </div>
+        <pre><code class="language-csharp">int[] nums1 = new int[] {5, 4, 4, 2, 1};
+List&lt;int&gt; nums2 = nums1.ToList();</code></pre>
+        <h3>Pass the array to the List constructor</h3>
+        <pre><code class="language-csharp">int[] nums1 = new int[] {5, 4, 4, 2, 1};
+List&lt;int&gt; nums2 = new List&lt;int&gt;(nums1);</code></pre>
+        <h3>Add each item from the array to a new list</h3>
+        <pre><code class="language-csharp">int[] nums1 = new int[] {5, 4, 4, 2, 1};
+List&lt;int&gt; nums2 = new List&lt;int&gt;();
+for(int i=0; i &lt; nums1.Length; i++)
+    nums2.Add(nums1[i]);</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2e4d85c9-dfd7-4b79-adf2-9255ef9bd0f8?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <H2>Cloning a List</H2>        
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/6f6fc308-3f54-49fb-a8e3-1da50b8dd4cf?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p> 
+        <div class="block warning">
+            <p>
+                If you simply assign one list to a new list variable (<code class="language-csharp">List&lt;int&gt; nums2 = nums1;</code>), you have 2 variables <strong>pointing to the same list</strong>.<br>
+                If you change something about the nums2 list, you are actually changing the list that nums1 points to.
+            </p>
+        </div>
+        <br>
+        Sometimes what you want to do is create a copy or a <strong>clone</strong> of a list.<br>
+        Changing the clone will <i>not</i> affect the original list.
+        <p>
+            You can create a copy of a List using one of the following ways:
+            <ul>
+                <li>call <code>ToList</code> on the List</li>
+                <li>Pass the List to the List constructor</li>
+                <li>Add each item from the List to a new list</li>
+            </ul>
+        </p>
+        
+        <h3>call <code>ToList</code> on the array</h3>    
+        <div class="block warning">
+            <p><b>NOTE: </b>To use the <code>ToList</code> method, you need <code class="language-csharp">using System.Linq;</code> at the top of the file.</p>
+        </div>
+        <pre><code class="language-csharp">List&lt;int&gt; nums1 = new List&lt;int&gt;() {5, 4, 4, 2, 1};
+List&lt;int&gt; nums2 = nums1.ToList();</code></pre>
+        <h3>Pass the array to the List constructor</h3>
+        <pre><code class="language-csharp">List&lt;int&gt; nums1 = new List&lt;int&gt;() {5, 4, 4, 2, 1};
+List&lt;int&gt; nums2 = new List&lt;int&gt;(nums1);</code></pre>
+        <h3>Add each item from the array to a new list</h3>
+        <pre><code class="language-csharp">List&lt;int&gt; nums1 = new List&lt;int&gt;() {5, 4, 4, 2, 1};
+List&lt;int&gt; nums2 = new List&lt;int&gt;();
+for(int i=0; i &lt; nums1.Length; i++)
+    nums2.Add(nums1[i]);</code></pre>
+
+        
+        <h2>Examples</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/aebcca4b-2b2e-46d0-839a-0144ad5c73cc?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            <ol>
+                <li>On line 12, clone the JLA list.</li>
+                <li>In the cloned list, remove Aquaman. </li>
+                <li>Then after the foreach, print the cloned list with a title of <strong>New and Improved Justice League</strong>.</li>
+            </ol> 
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc83hqts?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    List&lt;string&gt; JLA = new List&lt;string&gt;() {"Batman", "Flash", "Superman", "Wonder Woman", "Aquaman" };
+    List&lt;string&gt; clone = JLA.ToList();
+    clone.Remove("Aquaman");
+    Console.WriteLine("Original Justice League");
+    foreach(string super in JLA)
+        Console.WriteLine(super);
+
+    Console.WriteLine("New and Improved Justice League");
+    foreach(string super in clone)
+        Console.WriteLine(super);
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/de54acd7-6695-464b-88f4-c7a002d8b06f?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

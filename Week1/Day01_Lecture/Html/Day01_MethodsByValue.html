@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Parameters by Value</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><b>Methods</b></div>
+        <a href="..\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="Day01_MethodsByValue.html" class="indent active">By Value</a>
+        <a href="Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="Day01_MethodsOptionalParam.html" class="indent">Optional</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day02_Lecture\Html\Day02_Arrays.html"><b>Arrays and Lists</b></a></div>
+        <p></p><br>
+    </div> 
+    <div  class="main">
+        <H1>Parameters by Value</H1>        
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/9d2df604-f580-4cd0-a438-39b9350f14e7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        
+        <h2>Pass by Value == <b>COPY</b></h2>
+        <h2>Examples</h2>
+        Here's a method that adds 2 numbers.
+        <pre><code class="language-csharp">static int Add()
+{
+    return 5 + 2;
+}</code></pre>
+        However, this is not a very useful method. It <i>always</i> returns 7. It would be great if you could create a method that would add any 2 numbers that I want it to. 
+        Therefore, I need to define 2 variables as <b>parameters</b> that can be changed.
+        <pre><code class="language-csharp">static int Add(int number1, int number2)
+{
+    return number1 + number2;
+}</code></pre>
+        This method now will add any 2 integers that are passed to it when the method is called.
+        <pre><code class="language-csharp">int sum1 = Add(5, 2);
+int sum2 = Add(13,5);</code></pre>
+        The first line will <b>copy</b> 5 into the number1 variable and <b>copy</b> 2 into the number2 variable.
+        The second line will <b>copy</b> 13 into the number1 variable and <b>copy</b> 5 into the number2 variable.
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a854d4a7-ec88-495c-bf33-fa33d4147911?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        <h2>Challenges</h2>
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Change line 9 to see how passing different values will output different messages.
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3ybzqy52d?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/af00fec0-48ab-446e-972b-330d13beb2dc?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

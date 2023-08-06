@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Methods Overview</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><b>Methods</b></div>
+        <a href="..\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day01_Methods.html" class="active">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="Day01_MethodsOptionalParam.html" class="indent">Optional</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day02_Lecture\Html\Day02_Arrays.html"><b>Arrays and Lists</b></a></div>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Methods Overview</H1>
+        Methods are where the real work in software happens! Variables are necessary but they just store data. The methods do the work and where you'll spend the majority of your career coding.
+        Therefore, learning how to create methods and call them is vital to being a software engineer.
+        <p>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8d62d465-e0b4-45a5-8c1d-6fb675258697?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+        <p>
+        Methods are just <b>named blocks of code.</b> Therefore, you need to know the <b>name</b> of the method and <b>how to talk (return type and parameters)</b> to the method. 
+        These are the base parts of a method signature (or header): <b>return type</b>, <b>method name</b>, and <b>parameter list</b>.<br>
+        <img src="methodBasics.png" alt="Method parts: signature and body" width="450px" />
+
+        <h2>Examples</h2>
+        <p>This line of code calls the <b>ResetColor</b> method on the <b>Console</b> class. The method takes no parameters and does not return any data.
+        <pre><code class="language-csharp">Console.ResetColor();</code></pre>
+
+        <p>This line of code calls the <b>SetCursorPosition</b> method on the <b>Console</b> class. The method takes <b>2 parameters</b> and does not return any data. 
+        <br>It moves the cursor to the 5th column from the left and 10th row from the top.
+        <pre><code class="language-csharp">Console.SetCursorPosition(5, 10);</code></pre>
+
+        <p>This line of code calls the <b>ReadLine</b> method on the <b>Console</b> class. The method takes no parameters and <b>returns a string</b> entered by the user. 
+        When a method returns data, usually you <b>assign the returned value to a variable</b> so you can use the data that is returned.
+        <pre><code class="language-csharp">string usersInput = Console.ReadLine();</code></pre>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/55908e63-86d0-485c-bbc9-10fb7dbb5af2?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ff850e96-59d7-49f4-8feb-3bc62d47f412?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        <p>
+
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Fix line 9 to show the output <b>"Hello, Earth-8511! Your friendly neighborhood Spider-ham is here to help!"</b>
+            <p>
+            <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3ybcdvha5?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    string input = SpiderVerse(8511);
+    Console.WriteLine($"Hello, {input}! Your friendly neighborhood Spider-ham is here to help!");
+}</code></pre>       
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/90cb4498-a602-4df7-a150-90287c7a8e0e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/89592741-7272-4b72-82c3-4956c5e2aa68?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

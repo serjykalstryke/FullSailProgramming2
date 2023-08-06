@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Lists - Removing</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html">Lists</a>
+        <a href="Day02_ListsCount.html">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html" class="active">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Lists - Removing</H1>
+        There are two main ways to remove items from a List: <strong><code>Remove</code></strong> and <strong><code>RemoveAt</code></strong>.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f611bd7b-fca0-4b84-a83a-cf4b969a7455?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <div class="block warning">
+            <p>
+                <b>NOTE: </b>When removing a value using either approach, all the items to the <strong>right</strong> of the item in the list are shifted 1 spot to the left.
+                <br>
+                EX: if you remove 3 from <strong><code>List&lt;int&gt; nums = new List&lt;int&gt;() {5, 4, 3, 2, 1};</code></strong>, the values 2 and 1 will be shifted one spot to the left in the list.<br>
+                The resulting list will be {5, 4, 2, 1}.
+            </p>
+        </div>
+        
+        <h2>Examples</h2>
+        <h3>Remove</h3>
+        The <strong><code>Remove</code></strong> method takes 1 parameter, the <strong>item</strong> that you want to remove.<br>
+        List will start at the beginning of the List and search until it finds the item.<br>
+        List will <i>only</i> remove the first item that matches. Once it finds the item and removes it, the method returns.
+        <pre><code class="language-csharp">List&lt;int&gt; nums = new List&lt;int&gt;() {5, 4, 4, 2, 1};
+nums.Remove(4);</code></pre>
+        After <strong><code>Remove</code></strong> is called, the <strong>nums</strong> List will have these values: 5, 4, 2, 1.
+        <h3>RemoveAt</h3>
+        The <strong><code>RemoveAt</code></strong> method takes 1 parameter, the <strong>index</strong> of the item to remove.
+        <pre><code class="language-csharp">List&lt;int&gt; nums = new List&lt;int&gt;() {5, 4, 4, 2, 1};
+nums.RemoveAt(4);//to remove the 1 value, pass in the index of 4.</code></pre>
+        After <strong><code>RemoveAt</code></strong> is called, the <strong>nums</strong> List will have these values: 5, 4, 4, 2.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/b092aafb-b480-4187-9cb0-fcb6876e3fa8?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Use either of the remove methods on <strong>line 11</strong> to remove <strong>Aquaman</strong> from the list.
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc7v5h7k?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    List&lt;string&gt; best = new List&lt;string&gt;() {"Batman", "Flash", "Superman", "Wonder Woman", "Aquaman" };
+    best.Remove("Aquaman");
+    foreach(string super in best)
+        Console.WriteLine(super);
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1aa637ea-a476-4ca4-8b51-bf07b074d2a1?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

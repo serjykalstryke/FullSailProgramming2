@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Lists - Count and Capacity</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 1: Heroes V1</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day01_Lecture\Html\Day01_Methods.html"><b>Methods</b></a></div>
+        <!-- <a href="..\..\Day01_Lecture\Slides\PG2_01_Methods.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_Methods.html">Methods Overview</a>
+
+        <div class="header2"><b>Parameters</b></div>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByValue.html" class="indent">By Value</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsByRef.html" class="indent">By Reference</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOutParam.html" class="indent">Out parameters</a>
+        <a href="..\..\Day01_Lecture\Html\Day01_MethodsOptionalParam.html" class="indent">Optional</a> -->
+
+        <div class="header"><b>Arrays and Lists</b></div>
+        <a href="..\Slides\PG2_02_Lists.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Arrays.html">Arrays Overview</a>
+        <a href="Day02_ArraysProsCons.html">Arrays Pros/Cons</a>
+        <a href="Day02_Lists.html">Lists</a>
+        <a href="Day02_ListsCount.html" class="active">Lists: Count and Capacity</a>
+        <a href="Day02_ListsLooping.html">Lists: Looping</a>
+        <a href="Day02_ListsRemoving.html">Lists: Removing</a>
+        <a href="Day02_ListsCloning.html">Lists: Cloning</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Lists - Count and Capacity</H1>
+        The array has the <strong><code>Length</code></strong> property to tell you how big the array is. Since arrays have a static size, that length does not change.<br>
+        However, that length does not tell you how many items have been added to the array. 
+        <p>
+            The <strong>List&lt;T&gt;</strong> has 2 properties that convey information about the items in the list: <strong><code>Count</code></strong> and <strong><code>Capacity</code></strong>.
+        </p>
+        <H2>Capacity</H2>
+        Internally, the <strong>List&lt;T&gt;</strong> class stores the data in an array. <br>
+        The <strong><code>Capacity</code></strong> tells you how big that array is. It is basically the Length of that internal array.
+        <H2>Count</H2>
+        The <strong><code>Count</code></strong> property tells you how many items have been <strong>added</strong> to the List.<br>
+        The <strong><code>Count</code></strong> will always be &lt;= the <strong><code>Capacity</code></strong>.
+        <br>
+        When accessing the items in a List, you can only access the indexes from 0 to (Count - 1). 
+        <br>
+        Therefore, the <i>majority</i> of the time, you will use <strong><code>Count</code></strong> when accessing items in a List or looping over a List.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/0f7627b1-1a91-4fa8-8584-24a4bda3b619?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Examples</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d19133ef-0aef-49e7-8876-679cc8292741?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>
