@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Comparing Strings</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><b>Sorting</b></div>
+        <a href="..\Slides\PG2_05_Sorting.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day05_Algorithms.html" class="indent">Algorithms</a>
+        <a href="Day05_BubbleSort.html" class="indent">Bubble Sort</a>
+        <a href="Day05_Swapping.html" class="indent">Swapping</a>
+        <a href="Day05_Comparing.html" class="indent active">Comparing Strings</a>
+        <a href="Day05_MergeSort.html" class="indent">Merge Sort</a>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+
+        <p></p><br>
+    </div> 
+    
+    <div class="main">
+        <H1>Comparing Strings</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1c23b3a1-fd9f-4181-861d-3ef7d37125f7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        Strings can be easily compared for equality using == in conditions. However, less than (&lt;) and greater than (&gt;) won't work with strings in C#.
+        <p>
+            To compare strings in C#, we use the <code>CompareTo</code> method on the string.
+        </p>
+        <p>
+            CompareTo returns an int. Here are the meanings of the numbers that it can return:
+            <ul>
+                <li>-1: less than</li>
+                <li> 0: equal to</li>
+                <li> 1: greater than</li>
+            </ul>
+        </p>
+
+        <h2>Examples</h2>
+        <pre><code class="language-csharp">string s1 = "Batman", s2 = "Aquaman";
+int compResult = s1.CompareTo(s2);
+if(compResult &lt; 0) 
+    Console.WriteLine($"{s1} is LESS THAN {s2}");
+else if(compResult == 0) 
+    Console.WriteLine($"{s1} is EQUAL TO {s2}");
+else if(compResult &gt; 0) 
+    Console.WriteLine($"{s1} is GREATER THAN {s2}");</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2c29ec1d-2d53-474b-a926-21e1fdcf601c?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Change the condition on line 11 so that it prints the message <strong>Wonder Woman is GREATER THAN Superman</strong>
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3yct3gsnz?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    string s1 = "Wonder Woman", s2 = "Superman";
+    int compResult = s1.CompareTo(s2);
+    if(compResult > 0)
+        Console.WriteLine($"{s1} is GREATER THAN {s2}");
+}</code></pre>      
+            </div>
+        </div>
+        
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f219bc9b-d698-42f7-99a1-0728112ac9a5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

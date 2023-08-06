@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - Overwriting</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent"><b>OOP - Classes</b></a></div>
+        <!-- <a href="..\..\Day07_Lecture\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Classes.html" class="indent">Classes</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Fields.html" class="indent">Fields</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Properties.html" class="indent">Properties</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_COnstructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Methods.html" class="indent">Methods</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Instances.html" class="indent">Instances</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_ClassChallenge.html" class="indent">Class Challenge</a> -->
+
+        <div class="header"><a class="pageLink" href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent"><b>Inheritance</b></a></div>
+        <!-- <a href="..\..\Day08_Lecture\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Downcasting.html" class="indent">Downcasting</a> -->
+
+
+        <div class="header"><b>Polymorphism</b></div>
+        <a href="..\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="Day09_Overwriting.html" class="indent active">Overwriting</a>
+        <a href="Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - Overwriting</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/b7456215-2c76-4a69-a3de-74ca35b32c31?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <strong>Overriding</strong> allows you to change the behavior of a base method in a derived class method.
+        <h2>Requirements</h2>
+        <ul>
+            <li>Mark the base class method with the <code class="language-csharp">virtual</code> keyword.</li>
+            <li>Create a derived class method with the <strong>same signature</strong> but mark it with the <code class="language-csharp">override</code> keyword.</li>
+        </ul>
+        
+        <h2>Two ways to override</h2>
+        <ul>
+            <li><h3>Extension</h3>
+                If you want the behavior of the base method and add new functionality to it (extend it), then call the base version of the method from inside the derived method.<br>
+                <code class="language-csharp">base.Method(parameters);</code>
+                
+        <div class="block warning">
+            <p>To call the base class method, make sure to put <code class="language-csharp">base.</code> in front of the method call. If you do not, you will cause a recursive loop.</p>
+        </div>
+            </li>            
+            <li><h3>Fully Override</h3>
+                If you do NOT want any of the behavior of the base method, simply do not call the base method.
+            </li>
+        </ul>
+        
+        <h2>Examples</h2>
+        <h3>Extend the base method</h3>
+        <pre><code class="language-csharp">public class Employee
+{
+    //mark it with 'virtual'
+    public virtual void DoWork(int hours) 
+    {
+        Console.WriteLine($"Doing {hours} hours of work today!!");
+    }
+}
+public class Manager : Employee
+{
+    //mark it with 'override'
+    public override void DoWork(int hours) 
+    {
+        base.DoWork(hours-4);//extend the method by calling the base
+        Console.WriteLine($"I'll be in meetings the rest of the time. :-( ");
+    }
+}</code></pre>
+If you remove this line from above (<code class="language-csharp">base.DoWork(hours-4);</code>), you will be fully overriding the method.
+
+<h3>Behavior</h3>
+When you call the overriden method, the method that is called is determined by the object it is called on. If the object is just a base object, the base version is called.
+If the object is a derived object (even if the variable is a base type variable), the derived version is called.
+
+<pre><code class="language-csharp">Employee employee = new Employee();
+employee.DoWork(6); // will call the Employee class DoWork method
+
+employee = new Manager();
+employee.DoWork(8); // will call the Manager class DoWork method</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/b7648e25-afef-4633-a9ba-b45ed052a258?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/35ff861c-9c9d-4b68-9512-c2d29ee8d223?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

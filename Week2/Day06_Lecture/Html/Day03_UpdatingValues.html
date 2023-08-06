@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dictionaries - Getting and Updating Values</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><b>Dictionaries</b></div>
+        <a href="..\Slides\PG2_03_Dictionaries.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day03_Dictionaries.html">Dictionaries</a>
+        <a href="Day03_CreatingAdding.html">Creating and Adding</a>
+        <a href="Day03_Looping.html">Looping</a>
+        <a href="Day03_Removing.html">Removing</a>
+        <a href="Day03_CheckingKeys.html">Checking Keys</a>
+        <a href="Day03_UpdatingValues.html" class="active">Updating Values</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Dictionaries - Getting and Updating Values</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/88c3adb6-74d9-4c6a-8739-6a0d6120a3ab?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>        
+        There are 2 ways to <strong>get the value</strong> for a key:
+        <ul>
+            <li>TryGetValue(key, out value)</li>
+            <li>[key]</li>
+        </ul>
+        
+        <div class="block warning">
+            <p>Only use [key] to get a value if you know that the key is in the dictionary. If the key is not in the dictionary, [key] to get a value will throw an exception!</p>
+        </div>
+
+        <p></p>
+        To <strong>update a value</strong> for a key, use the <strong>[ ]</strong> on the left-hand side of an assignment operator.
+        
+        <h2>Examples</h2>        
+        <h3>TryGetValue</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  
+{
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  
+string keyToFind = "Cheesy Hamburger";
+bool isFound = menu.TryGetValue(keyToFind, out float price);
+if(isFound)
+    Console.WriteLine($"{keyToFind} costs {price:C2}");</code></pre>
+        This example will print <strong>Cheesy Hamburger costs $2.99</strong> because it was in the dictionary.
+
+        
+        <h3>[key]</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  
+{
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  
+string keyToFind = "Cheesy Hamburger";
+float price = menu[keyToFind]; //NOTE: if you're not sure if the key is in the dictionary, use ContainsKey to check first otherwise it'll throw an exception
+Console.WriteLine($"{keyToFind} costs {price:C2}");</code></pre>
+        This example will print <strong>Cheesy Hamburger costs $2.99</strong>.
+
+        
+        <h3>Updating a Value</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  
+{
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  
+string keyToFind = "Cheesy Hamburger";
+float price = menu[keyToFind]; //NOTE: if you're not sure if the key is in the dictionary, use ContainsKey to check first otherwise it'll throw an exception
+menu[keyToFind] = price + 1F;
+Console.WriteLine($"{keyToFind} now costs {menu[keyToFind]:C2}");</code></pre>
+        This example will print <strong>Cheesy Hamburger now costs $3.99</strong>.
+
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/66c6b2f0-f36d-4dee-89af-578f766666d2?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Write code on line 16 to update <strong>Aquaman's</strong> star ranking to 0.5F.
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycgsmavd?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+   Dictionary&lt;string, float&gt; starRanking = new Dictionary&lt;string, float&gt;();
+   {
+     {"Batman", 5.0F},
+     {"Superman", 4.5F},
+     {"Aquaman", 1.0F}
+   };
+   starRanking["Aquaman"] = 0.5F;
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ed4d53ad-51e0-40f4-a612-c0b86ade7bde?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

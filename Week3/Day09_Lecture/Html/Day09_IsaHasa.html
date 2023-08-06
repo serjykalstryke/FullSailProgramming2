@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Is-A vs. Has-A </title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent"><b>OOP - Classes</b></a></div>
+        <!-- <a href="..\..\Day07_Lecture\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Classes.html" class="indent">Classes</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Fields.html" class="indent">Fields</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Properties.html" class="indent">Properties</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_COnstructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Methods.html" class="indent">Methods</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Instances.html" class="indent">Instances</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_ClassChallenge.html" class="indent">Class Challenge</a> -->
+
+        <div class="header"><a class="pageLink" href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent"><b>Inheritance</b></a></div>
+        <!-- <a href="..\..\Day08_Lecture\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Downcasting.html" class="indent">Downcasting</a> -->
+
+
+        <div class="header"><b>Polymorphism</b></div>
+        <a href="..\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="Day09_IsaHasa.html" class="indent active">Is-A vs. Has-A</a>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Is-A vs. Has-A </H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2b5a6f7c-f54b-41e1-b261-7201d3d7cb6e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        In general, you want to <strong>favor composition (has-a)</strong> over <string>inheritance (is-a)</string>.
+        <p>The inheritance hierarchy is built into your code and cannot change at runtime. Has-a (the items contained inside your class) can be pointed to different instances making your code more flexible.</p>
+        <p>When possible, <strong><i>program to an interface</i></strong>. Doing so will create looser coupling and make your code more flexible.</p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

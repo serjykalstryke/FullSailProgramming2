@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - 4 Pillars</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">   
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><b>OOP - Classes</b></div>
+        <a href="..\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="Day07_4Pillars.html" class="indent active">The 4 Pillars</a>
+        <a href="Day07_Classes.html" class="indent">Classes</a>
+        <a href="Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="Day07_Fields.html" class="indent">Fields</a>
+        <a href="Day07_Properties.html" class="indent">Properties</a>
+        <a href="Day07_Constructors.html" class="indent">Constructors</a>
+        <a href="Day07_Methods.html" class="indent">Methods</a>
+        <a href="Day07_Instances.html" class="indent">Instances</a>
+        <a href="Day07_ClassChallenge.html" class="indent">Class Challenge</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent"><b>Inheritance</b></a></div>
+        <!-- <a href="..\..\Day08_Lecture\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Downcasting.html" class="indent">Downcasting</a> -->
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent"><b>Polymorphism</b></a></div>
+        <!-- <a href="..\..\Day09_Lecture\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\..\Day09_Lecture\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a> -->
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - 4 Pillars</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/504539ee-fa9c-4818-8621-e73074786acb?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <h2>Abstraction</h2>
+        Abstraction is the grouping of data (<strong>variables</strong>) and behavior (<strong>methods</strong>) to give them more meaning.<br>
+        <h4>Example</h4>
+        By itself, this variable is just a color. There's no extra meaning given to it.<br>
+        <pre><code class="language-csharp">ConsoleColor color = ConsoleColor.Green;</code></pre>
+
+        Now, because the color variable is inside a class called Car, it represents not just a color but the color of the car. More meaning is attached to the 
+        variable because of its association with the class.
+        <pre><code class="language-csharp">class Car
+{
+    ConsoleColor color = ConsoleColor.Green;
+}</code></pre>
+
+        <h2>Encapsulation</h2>
+        Encapsulation is also about grouping but this time it is about bringing common functionality together and to <strong><i>hide</i></strong> how something works.
+        Code that uses your class does not need to know about all the methods and variables that compose the class. They just need access to the functionality provided by the class.
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

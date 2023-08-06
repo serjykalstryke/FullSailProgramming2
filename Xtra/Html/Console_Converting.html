@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Console: Converting</title>
+    <link rel="stylesheet" href="..\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>GitHub</b></div>
+        <a href="PG2_01_GitHub.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\GitHub.html" class="indent">Overview</a>
+        <a href=".\GitHub_Classroom.html" class="indent">Classroom Assignment</a>
+        <a href=".\GitHub_Cloning.html" class="indent">Cloning the Repo</a>
+        <a href=".\GitHub_CommitPush.html" class="indent">Commit and Push</a>
+        <a href=".\GitHub_Troubleshooting.html" class="indent">Troubleshooting</a>
+
+        <div class="header"><b>Console</b></div>
+        <a href="PG2_01_MenuConsole.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\Console.html" class="indent">Overview</a>
+        <a href=".\Console_Memory.html" class="indent">Memory</a>
+        <a href=".\Console_Input.html" class="indent">Input</a>
+        <a href=".\Console_Converting.html" class="indent active">Converting</a>
+        <a href=".\Console_Output.html" class="indent">Output</a>
+
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Console: Converting</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/700629d5-f91e-4861-bbdc-affcfb297e61?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        There are 2 ways to convert from one data type to another:
+        <ul>
+            <li>
+                <h3>Implicit Conversion</h3>
+                The compiler can convert from a smaller data type to a larger data type. No build warnings or errors will happen.
+                <pre><code class="language-csharp">int smallNum = 5;
+long bigNum = smallNum; //this is implicit conversion</code></pre>
+            </li>
+            <li>
+                <h3>Explicit Conversion</h3>
+                The compiler can <strong><i>NOT</i></strong> convert from a larger data type to a smaller data type because there could be a loss of data in the conversion.
+                Therefore, the compiler forces the developer to explicitly define the conversion.<br>
+                On the right-side of the assignment, put the type you want to convert to inside ( ).
+                <pre><code class="language-csharp">long bigNum = 5;
+int smallNum = (int)bigNum; //this is explicit conversion</code></pre>
+            </li>
+        </ul>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/3cc8c079-ab9f-44b0-9286-b6e7f92da2fd?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h2>Converting from strings to numeric types</h2>
+        
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/afba0c8e-6a94-4801-9edc-36d961a291ee?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        You cannot convert a string to any numeric types with an implicit or explicit conversion. Neither will work.<br>
+        For example, there are a couple of ways to convert a string to an <strong>int</strong> type:
+        <ul>
+            <li>
+                <h3>int.Parse</h3>
+                int.Parse will convert a string and <i>attempt</i> to convert to an integer. <br>
+                If it succeeds, the integer is returned.<br>
+                If it fails, an <strong>exception</strong> is thrown. 
+                
+        <div class="block warning">
+            <p>To use int.Parse <i>safely</i>, you should use a try-catch to ensure that any exceptions are caught.</p>
+        </div>
+                <pre><code class="language-csharp">string age = "Bob";
+try {
+    int myAge = int.Parse(age);
+}
+catch(Exception ex)
+{
+    Console.WriteLine($"{age} is not a number.");
+}</code></pre>
+                In this example, age is "Bob" so an exception is thrown and this is printed: "Bob is not a number."
+            </li>
+            
+            <li>
+                <h3>int.TryParse</h3>
+                int.TryParse will convert a string and <i>attempt</i> to convert to an integer. <br>
+                If it succeeds, the integer is returned through the <strong>out</strong> parameter and <strong>true</strong> is returned in the return type.<br>
+                If it fails, an <strong>exception</strong> is <i>NOT</i> thrown. A 0 is returned through the <strong>out</strong> parameter and <strong>false</strong> is returned in the return type.
+                <pre><code class="language-csharp">string age = "Bob";
+bool succeeds = int.TryParse(age, out int myAge);
+</code></pre>
+                In this example, age is "Bob" so succeeds is set to false and myAge is set to 0.
+            </li>
+        </ul>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e293dea2-09f2-4f5f-b066-7f858086f838?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h2>Challenges!</h2>
+                
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add code on line 11 to convert myLevel and assign the value to the level variable so that the output is <strong>"Your level is 100."</strong>;
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ye6p5qyj?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e0404d41-bacf-4b0a-bcae-d9bcc0d98c3a?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+
+    </div>
+    <script src="..\Styles\prism.js"></script>
+    <script src="..\Styles\collapsible.js"></script>
+</body>
+</html>

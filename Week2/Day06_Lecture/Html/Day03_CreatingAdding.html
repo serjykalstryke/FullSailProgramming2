@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dictionaries - Creating and Adding</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><b>Dictionaries</b></div>
+        <a href="..\Slides\PG2_03_Dictionaries.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day03_Dictionaries.html">Dictionaries</a>
+        <a href="Day03_CreatingAdding.html" class="active">Creating and Adding</a>
+        <a href="Day03_Looping.html">Looping</a>
+        <a href="Day03_Removing.html">Removing</a>
+        <a href="Day03_CheckingKeys.html">Checking Keys</a>
+        <a href="Day03_UpdatingValues.html">Updating Values</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Dictionaries - Creating and Adding</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/aed9a273-1a10-41ea-858c-979ad40bbd62?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <div class="block warning">
+            <p><b>NOTE: </b>To use the List class, you need <code class="language-csharp">using System.Collections.Generic;</code> at the top of the file.</p>
+        </div>
+        
+        <h2><strong><code class="language-cshar">Dictionary&lt;TKey,TValue&gt;</code></strong></h2>
+        Dictionaries are generic classes. To create a Dictionary variable, you need to set the type of the key and the type of the value.
+        Because they are defined separately, the type of the key does not have to be the same as the type of the value.<br>
+        
+        
+        <h2>Examples</h2>
+        <H3>Create a Dictionary:</h3>
+        To create a Dictionary to associate Student IDs to Student records:<br>
+        <pre><code class="language-csharp">Dictionary&lt;string,StudentRecord&gt; studentInfo = new Dictionary&lt;string,StudentRecord&gt;();</code></pre>
+        
+        <H3>Add items in the initializer:</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  //don't put a ; here
+{
+    //{ key, value }
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  //put the ; here</code></pre>        
+        
+        <h3>Add a key and value using the Add method:</h3>
+        <pre><code class="language-csharp">menu.Add("French Fries", 0.99F);
+menu.Add("Soda", 0.99F);</code></pre>
+        <div class="block warning">
+            <p>The Add method will <strong>throw an exception</strong> if the key is already in the dictionary.</p>
+        </div>
+        
+        <h3>Add a key and value using [ ]:</h3>
+        <pre><code class="language-csharp">menu["Chicken Nuggets"] = 3.99F;</code></pre>
+        <div class="block warning">
+            <p>[ ] will <strong>NOT</strong> throw an exception if the key is already in the dictionary. It will <strong>overwrite</strong> the value for the key.</p>
+        </div>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ce7aef46-242e-46e1-826e-29b5c52fa7c7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            We want to create a dictionary to associate students (strings) with their GPAs (floats).
+            <ul>
+                <li>Fix line 10 to add the appropriate types for the keys and values</li>
+                <li>On line 11, add a student with a GPA using the Add method.</li>
+                <li>After line 11, add another student with a GPA using the [ ].</li>
+            </ul>
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycep6a4a?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+             </p>
+             <button type="button" class="collapsible">Solution</button>
+             <div class="content">
+                 <pre><code class="language-csharp">public static void Main(string[] args)
+ {
+    Dictionary&lt;string, float&gt; gpas = new Dictionary&lt;string, float&gt;();
+    gpas.Add("Steve", 95.4F);
+    gpas["Bruce"] = 100.0F;
+ }</code></pre>      
+             </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fac49b7-7b83-472d-9118-03a12c6cdaa8?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

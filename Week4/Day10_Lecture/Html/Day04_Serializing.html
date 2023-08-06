@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Serializing JSON</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><b>File I/O</b></div>
+        <a href="Day04_FileInputOutput.html" class="indent">File I/O Overview</a>
+        <a href="Day04_FilePaths.html" class="indent">File Paths</a>
+        <a href="Day04_Using.html" class="indent">Using Statement</a>
+        <a href="Day04_WritingCSV.html" class="indent">Writing CSV</a>
+        <a href="Day04_ReadingCSV.html" class="indent">Reading CSV</a>
+        <a href="Day04_NuGet.html" class="indent">NuGet Manager</a>
+        <a href="Day04_Serializing.html" class="indent active">Serializing JSON</a>
+        <a href="Day04_Deserializing.html" class="indent">Deserializing JSON</a>
+
+        <div class="header"><a class="pageLink" href="Day02_Splitting.html" class="indent"><b>Splitting Strings</b></a></div>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Serializing JSON</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d29f884f-5bab-415a-a3cc-6c5d66a0e716?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <strong>Serializing</strong> means to save the state of your objects. Your objects in code have data and methods. When serializing, you are only saving the data on those objects.
+        <p>
+            We are going to serialize some objects in JSON format. We'll use the Json.NET library to help us.
+        </p>
+        
+        <div class="block info">
+            <p>NOTE: There are different ways to serialize using Json.NET. I am showing you one way to do it.</p>
+        </div>
+
+        <h2>Examples</h2>
+        <div class="block warning">
+            <p>To work with Json.NET, you need <strong><code class="language-csharp">using Newtonsoft.Json;</code></strong> at the top of the file.</p>
+        </div>
+        <pre><code class="language-csharp">string jsonFilePath = Path.ChangeExtension(filePath, ".json");//ensure the file created has a .json extension
+using (StreamWriter sw = new StreamWriter(jsonFilePath))
+{
+    using (JsonTextWriter jtw = new JsonTextWriter(sw)) //use a nested using statement for the JsonTextWriter
+    {
+        JsonSerializer serializer = new JsonSerializer();
+        serializer.Formatting = Formatting.Indented; //this makes the file more readable for humans. Don't do this if you're passing the data across the internet.
+        serializer.Serialize(jtw, bats);
+    }
+}</code></pre>
+        You can replace <strong>bats</strong> on the .Serialize method call with whatever object you want to save. Json.NET will handle how to serialize the object's data.
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/9ff4be69-5712-45bc-b5ee-fdaf1b1f1c64?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8173ea19-87fe-4d32-91e1-ba4caf1121db?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

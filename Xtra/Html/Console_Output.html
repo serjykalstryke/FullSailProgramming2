@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Console: Output</title>
+    <link rel="stylesheet" href="..\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>GitHub</b></div>
+        <a href="PG2_01_GitHub.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\GitHub.html" class="indent">Overview</a>
+        <a href=".\GitHub_Classroom.html" class="indent">Classroom Assignment</a>
+        <a href=".\GitHub_Cloning.html" class="indent">Cloning the Repo</a>
+        <a href=".\GitHub_CommitPush.html" class="indent">Commit and Push</a>
+        <a href=".\GitHub_Troubleshooting.html" class="indent">Troubleshooting</a>
+
+        <div class="header"><b>Console</b></div>
+        <a href="PG2_01_MenuConsole.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\Console.html" class="indent">Overview</a>
+        <a href=".\Console_Memory.html" class="indent">Memory</a>
+        <a href=".\Console_Input.html" class="indent">Input</a>
+        <a href=".\Console_Converting.html" class="indent">Converting</a>
+        <a href=".\Console_Output.html" class="indent active">Output</a>
+
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Console: Output</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/dcdcaeb5-1b2c-4e5d-8c1d-ae02e58e30d1?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <h2>Cursor</h2>
+        When printing items to the console, the cursor location determines where they are printed. There are several methods that you can use to position the cursor.
+        <ul>
+            <li>
+                <strong>Console.CursorLeft</strong>
+                Allows you to get or set the X position (horizontal) of the cursor.
+            </li>
+            <li>
+                <strong>Console.CursorTop</strong>
+                Allows you to get or set the Y position (vertical) of the cursor.
+            </li>
+            <li>
+                <strong>Console.SetCursorPosition(x,y)</strong>
+                Allows you to set the X and Y positions of the cursor.
+            </li>
+        </ul>
+        <pre><code class="language-csharp">int xPos = Console.CursorLeft; //get the horizontal position
+Console.CursorLeft = xPos + 5; //set the horizontal position. Moves the cursor right by 5 columns.
+
+int yPos = Console.CursorTop; //get the vertical position
+Console.CursorTop = yPos + 5; //set the vertical position. Moves the cursor down by 5 rows.
+
+Console.SetCursorPosition(3,12); //moves the cursor to the 3rd column and 12th row.</code></pre>
+        
+        <h2>Window Size</h2>
+        The Console window has a specific size. You can retrieve that size using the WindowWidth and WindowHeight properties of the Console class.
+        
+        <pre><code class="language-csharp">int width = Console.WindowWidth; 
+int height = Console.WindowHeight; </code></pre>
+
+        <p>The range of the cursor within the Console window is (0 to Console.WindowWith-1) wide by (0 to Console.WindowHeight-1) high.</p>
+        <div class="block warning">
+            <p>If you try to set the x position of the cursor >= WindowWidth, it will cause an exception. EXAMPLE:
+            <pre><code class="language-csharp">Console.CursorLeft = Console.WindowWidth; //this will throw an exception</code></pre> </p>
+        </div>
+
+        
+        <h2>Colors</h2>
+        You can control the foreground color and the background color of the items printed to the Console. 
+        NOTE: setting the colors change what color is used when something is printed <i>after</i> setting the color. It will not affect the color of items already printed.
+        <h3>Foreground Color</h3>
+        The foreground color determines the color of any text printed.
+        
+        <pre><code class="language-csharp">Console.ForegroundColor = ConsoleColor.Yellow; 
+Console.WriteLine("Batman!");</code></pre>
+        This example will print "Batman!" in yellow.<br>        
+        <img class="fit-picture bounding" src=".\Colors01.png" alt="Foreground Color Example"/>
+        
+        <h3>Background Color</h3>
+        The Background color determines the color of the behind the text that is printed.
+        
+        <pre><code class="language-csharp">Console.BackgroundColor = ConsoleColor.DarkBlue; 
+Console.WriteLine("Batman!");</code></pre>
+        This example will print "Batman!" on a dark blue background.<br> 
+        <img class="fit-picture bounding" src=".\Colors02.png" alt="Background Color Example"/>
+               
+        <p>
+            <div class="block warning">
+                <p>Once you are done printing something in the colors you choose, it is best to reset the colors to the defaults.<br>
+                <code class="language-csharp">Console.ResetColor();</code></p>
+            </div> 
+        </p>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/74d01dac-cec6-4a48-a2d8-999d561fec06?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/5af4583d-6154-4e93-aa87-a5e60b3e6578?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/90445124-29d9-4136-9441-196dc55968ea?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/423fd748-e278-4f00-b384-44fef4482a89?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/597cb76d-66ff-439a-99d4-8fb53ad369f7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/3606968d-e2f1-43b7-a891-a423f3c24d6e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+
+    </div>
+    <script src="..\Styles\prism.js"></script>
+    <script src="..\Styles\collapsible.js"></script>
+</body>
+</html>

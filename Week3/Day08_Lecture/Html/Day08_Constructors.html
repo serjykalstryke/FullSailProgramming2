@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - Inheritance and Constructors</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">  
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent"><b>OOP - Classes</b></a></div>
+        <!-- <a href="..\..\Day07_Lecture\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Classes.html" class="indent">Classes</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Fields.html" class="indent">Fields</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Properties.html" class="indent">Properties</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_COnstructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Methods.html" class="indent">Methods</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Instances.html" class="indent">Instances</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_ClassChallenge.html" class="indent">Class Challenge</a> -->
+
+        <div class="header"><b>Inheritance</b></div>
+        <a href="..\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="Day08_Constructors.html" class="indent active">Constructors</a>
+        <a href="Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="Day08_Downcasting.html" class="indent">Downcasting</a>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent"><b>Polymorphism</b></a></div>
+        <!-- <a href="..\..\Day09_Lecture\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\..\Day09_Lecture\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a> -->
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - Inheritance and Constructors</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f373ce84-34c3-4a1e-851d-e8c43a84c609?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <p>Every class needs a constructor to initialize the data in your class.</p>
+        <div class="block warning">
+            <p>When you inherit from another class, your derived class <i>must</i> call a base constructor to ensure that the base class parts are initialized <strong><i>before</i></strong>
+            the parts of the derived class are initialized.</p>
+        </div>
+        To call a base constructor, you usually need to pass data to the base constructor. Therefore, the data needs to also be passed to the derived class constructor.
+        
+        <h2>Examples</h2>
+        <h3>Calling the base constructor</h3>
+        After the last ) on the derived class constructor, add <code class="language-csharp"> : base(parameters)</code>. Call it like a method (just pass the variables without the type information).
+        <pre><code class="language-csharp">public class Person
+{
+    public string Name {get;set;}
+    //constructor
+    public Person(string name) 
+    { 
+        Name = name; 
+    }
+}
+public class Superhero : Person
+{
+    public string Identity {get;set;}
+    public Superhero(string identity, string name) : base(name) //call the base constructor
+    { 
+        Identity = identity;
+    }
+}</code></pre>
+        The Superhero constructor needs to pass a string to the base constructor. Therefore, a <code class="language-csharp"> string name</code> parameter must be passed to the Superhero constructor.
+        Then, it calls the base constructor with <code class="language-csharp"> : base(name)</code>.
+
+        <div class="block warning">
+            <p>Do <strong><i>NOT</i></strong> duplicate the base constructor code inside of the derived constructor. Let the base constructor do its work when you call :base(). 
+            The code in the derived constructor should be what's special about the derived constructor and should only initialize the derived class parts.</p>
+        </div>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/3955d755-6e09-4766-8fbb-dbd44f35c529?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add a constructor to the Employee class. 
+            <ul>
+                <li>Make sure to call the base constructor.</li>
+                <li>Make sure to initialize the Salary of the Employee class.</li>
+            </ul>
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ydk5g82p?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public class Employee : Person
+{
+    public float Salary {get;set;}
+    
+    public Employee(string name, float salary) : base(name)
+    {
+        Salary = salary;
+    }
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1ba59db3-d919-4ab4-a5ac-7fec60f0d15f?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

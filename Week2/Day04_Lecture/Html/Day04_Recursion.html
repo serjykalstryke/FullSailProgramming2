@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Recursion Overview</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><b>Recursion</b></div>
+        <a href="..\Slides\PG2_05_Recursion.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day04_Recursion.html" class="indent active">Recursion Overview</a>
+        <a href="Day04_RecursiveOverhead.html" class="indent">Overhead</a>
+        <!-- <a href="Day04_RecursiveChallenges.html" class="indent">Challenges</a> -->
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Recursion Overview</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/5f03524c-00a1-4207-8c07-4ddc63170ce3?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <strong>Recursion</strong> happens when a method calls itself. This will create a <strong>loop</strong>
+        <p>
+            Most loops have a condition that controls the loop. For instance, <code class="language-csharp">for(int i=0;i &lt; 100;i++)</code> the part of the for loop (i &lt; 100)
+            controls the loop. If the condition is false, the loop stops. The loop will continue as long as the condition is true.
+        </p>
+        <p>
+            Recursion is another kind of loop. Therefore, you want to include code in the method that will control the recursive loop. The code that controls a recursive loop is called an <strong>exit condition</strong>.
+        </p>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1a386133-6402-429e-81c7-dd03a2aa44ab?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+
+        <h2>Examples</h2>
+        This <strong>for loop</strong> will loop 100 times printing the numbers 0-99.
+        <pre><code class="language-csharp">for(int i=0;i &lt; 100;i++)
+{
+    Console.WriteLine(i);
+}</code></pre>
+
+        An equivalent <strong>recursive loop</strong>...
+        <pre><code class="language-csharp">int i = 0;
+RecursiveMethod(i);
+
+static void RecursiveMethod(int i)
+{
+    if(i &lt; 100) //the exit condition
+    {
+        Console.WriteLine(i);
+        RecursiveMethod(i+1);//the recursive call
+    }
+}</code></pre>
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Write code in RandomRecursive to print the random number and call itself while the random number is not 50.
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycqkbygz?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    RandomRecursive();
+}
+static Random rando = new Random();
+static void RandomRecursive()
+{
+  int num = rando.Next(100);
+  Console.WriteLine(num);
+  if(num != 50)
+    RandomRecursive();
+}</code></pre>      
+            </div>
+        </div>
+        
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/34b2f2ea-d310-47d1-8db6-d27cb7286a6f?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

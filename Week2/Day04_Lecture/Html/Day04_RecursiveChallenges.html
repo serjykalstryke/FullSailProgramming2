@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Recursion - Challenges</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><b>Recursion</b></div>
+        <a href="..\Slides\PG2_05_Recursion.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day04_Recursion.html" class="indent">Recursion Overview</a>
+        <a href="Day04_RecursiveOverhead.html" class="indent">Overhead</a>
+        <!-- <a href="Day04_RecursiveChallenges.html" class="indent">Challenges</a> -->
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Recursion - Challenges</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/53e7a5c6-b7d3-4e1f-b2d4-e33b6dde21d5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h2>Examples</h2>
+        <h3>ContainsKey</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  
+{
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  
+bool isFound = menu.ContainsKey("Iced Tea");
+Console.WriteLine(isFound);</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/bcdd090c-224c-4335-bfc8-413ad36ca3bd?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Use either ContainsKey or TryGetValue to find the amazonian key. Print out the result of calling either method.
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycgrtckq?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+        </div>
+        
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fac49b7-7b83-472d-9118-03a12c6cdaa8?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

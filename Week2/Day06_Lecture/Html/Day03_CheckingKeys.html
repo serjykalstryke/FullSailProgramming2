@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dictionaries - Checking Keys</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+
+        <div class="header"><b>Dictionaries</b></div>
+        <a href="..\Slides\PG2_03_Dictionaries.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day03_Dictionaries.html">Dictionaries</a>
+        <a href="Day03_CreatingAdding.html">Creating and Adding</a>
+        <a href="Day03_Looping.html">Looping</a>
+        <a href="Day03_Removing.html">Removing</a>
+        <a href="Day03_CheckingKeys.html" class="active">Checking Keys</a>
+        <a href="Day03_UpdatingValues.html">Updating Values</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Dictionaries - Checking Keys</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/53e7a5c6-b7d3-4e1f-b2d4-e33b6dde21d5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        There are 2 ways to check if a Key is in the Dictionary:
+        <ul>
+            <li>ContainsKey(key)</li>
+            <li>TryGetValue(key, out value)</li>
+        </ul>
+        Both of these methods will return a <strong>bool (true or false)</strong> if the key is found. <code class="language-csharp">TryGetValue(key, out value)</code> will also return
+        the value associated with the key in the out parameter if the key is found.
+        
+        <h2>Examples</h2>
+        <h3>ContainsKey</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  
+{
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  
+bool isFound = menu.ContainsKey("Iced Tea");
+Console.WriteLine(isFound);</code></pre>
+        This example will print <strong>false</strong> because "Iced Tea" is not in the dictionary.
+        
+        <h3>TryGetValue</h3>
+        <pre><code class="language-csharp">Dictionary&lt;string,float&gt; menu = new Dictionary&lt;string,float&gt;()  
+{
+    {"Hamburger", 1.99F},
+    {"Cheesy Hamburger", 2.99F}
+};  
+string keyToFind = "Cheesy Hamburger";
+bool isFound = menu.TryGetValue(keyToFind, out float price);
+if(isFound)
+    Console.WriteLine($"{keyToFind} costs {price:C2}");</code></pre>
+        This example will print <strong>Cheesy Hamburger costs $2.99</strong> because it was in the dictionary.
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/bcdd090c-224c-4335-bfc8-413ad36ca3bd?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Use either ContainsKey or TryGetValue to find the amazonian key. Print out the result of calling either method.
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycgrtckq?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+   Dictionary&lt;string, float&gt; starRanking = new Dictionary&lt;string, float&gt;();
+   {
+     {"Batman", 5.0F},
+     {"Superman", 4.5F},
+     {"Aquaman", 1.0F}
+   };
+   string amazonian = "Wonder Woman";
+   if(starRanking.TryGetValue(amazonian, out float ranking))
+   {
+        Console.WriteLine($"{amazonian} has a ranking of {ranking}.");
+   }
+   else
+   {
+        Console.WriteLine($"{amazonian} was not found in the dictionary.");
+   }
+}</code></pre>      
+            </div>
+        </div>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

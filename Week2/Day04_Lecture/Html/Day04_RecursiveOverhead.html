@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Recursion - Overhead</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><b>Recursion</b></div>
+        <a href="..\Slides\PG2_05_Recursion.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day04_Recursion.html" class="indent">Recursion Overview</a>
+        <a href="Day04_RecursiveOverhead.html" class="indent active">Overhead</a>
+        <!-- <a href="Day04_RecursiveChallenges.html" class="indent">Challenges</a> -->
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Recursion - Overhead</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d17996f2-713b-4d3b-bd83-f47b2a3e93e5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        Recursion is <strong>NOT</strong> equivalent to other kinds of loops. Every recursive method call generates an entry on the <strong>call stack</strong>.
+        This generates a bit of memory overhead for every recursive call. If the recursive method continues making recursive calls for too long, the stack will run out of memory and 
+        cause a <strong>stack overflow exception!</strong> You should be careful about using recursion. It is not usually good for open-ended looping (like menus).
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/03640935-5bac-47c5-b41e-fec3a529a559?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h2>Two Loops</h2>
+        Recursion is also different from other loops in the sense that <strong>recursion has 2 loops</strong>. And often times, you'll do different things in the loops.
+        <pre><code class="language-csharp">Counter(0);
+
+static void Counter(int N)
+{
+    if(N &lt; 100)
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine(N);
+
+        Counter(N+1);
+
+        //these lines only happen after N becomes 100
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(N);
+    }
+}</code></pre>
+        In this example, the numbers 0-99 are shown in blue. That is the <strong>first loop</strong>. However, when N becomes 100, the if condition becomes false and the Counter method can return.
+        <Strong>Where does a recursive method return to?</Strong> The method returns to the method that called it. In this case, Counter(99) called Counter(100) so Counter(100) will return
+        to where it was called. Then Counter(99) can finish the rest of its code and return to Counter(98). Etc. When the exit condition happens, it will then print 99-0 in red. This is the <strong>second loop</strong> 
+        sometimes called <strong>unwinding the stack</strong> since the method calls placed on the call stack start to be removed from the call stack.
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/9828d37c-b99e-43a3-9e94-de81f7f5e86c?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f9248389-1a5a-4c66-b6f5-b2930d640b97?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/cef200e8-aba9-4a67-8791-b830c0550469?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - Instances</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">   
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><b>OOP - Classes</b></div>
+        <a href="..\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="Day07_Classes.html" class="indent">Classes</a>
+        <a href="Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="Day07_Fields.html" class="indent">Fields</a>
+        <a href="Day07_Properties.html" class="indent">Properties</a>
+        <a href="Day07_Constructors.html" class="indent">Constructors</a>
+        <a href="Day07_Methods.html" class="indent">Methods</a>
+        <a href="Day07_Instances.html" class="indent active">Instances</a>
+        <a href="Day07_ClassChallenge.html" class="indent">Class Challenge</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent"><b>Inheritance</b></a></div>
+        <!-- <a href="..\..\Day08_Lecture\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Downcasting.html" class="indent">Downcasting</a> -->
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent"><b>Polymorphism</b></a></div>
+        <!-- <a href="..\..\Day09_Lecture\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\..\Day09_Lecture\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a> -->
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - Instances</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/bb56252c-844e-4176-9dae-ac64644112ef?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        To use a non-static class, you must first <strong>create an instance</strong> of the class. To do so, you must call a <strong>constructor</strong> using the <strong>new</strong> keyword.
+        
+        <pre><code class="language-csharp">public class Car
+{
+    public string Model {get;set;}
+    public string Make {get;set;}
+    public Car(string make, string model) { Make = make; Model = model; }
+}</code></pre>
+        The Car class has 1 constructor that requires 2 string parameters. To create an instance of Car, you would need to pass in 2 strings to the constructor:
+        <pre><code class="language-csharp">Car myCar = new Car("Ford", "Mustang");</code></pre>
+
+        <h2>Examples</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/6eaeec81-67d8-4476-af97-41a247d3a1f2?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Create an instance of Car in Main and call Honk so that the message printed is <strong>My Green Ford Mustang goes HONK HONK!!</strong>
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3yddh475q?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    Car myCar = new Car(ConsoleColor.Green, "Ford", "Mustang");
+    myCar.Honk();
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/75f63d57-f5c3-45da-b783-e808089f65f4?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

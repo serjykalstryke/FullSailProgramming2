@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dictionaries - Removing</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><b>Dictionaries</b></div>
+        <a href="..\Slides\PG2_03_Dictionaries.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day03_Dictionaries.html">Dictionaries</a>
+        <a href="Day03_CreatingAdding.html">Creating and Adding</a>
+        <a href="Day03_Looping.html">Looping</a>
+        <a href="Day03_Removing.html" class="active">Removing</a>
+        <a href="Day03_CheckingKeys.html">Checking Keys</a>
+        <a href="Day03_UpdatingValues.html">Updating Values</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Dictionaries - Removing</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/814d25b1-1119-45cc-b07c-19f4c134c718?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        To remove a key and its associated value from a Dictionary, you call the <code class="language-csharp">Remove</code> method and pass in the <strong>key</strong> that you wish to remove. 
+        This method <strong>returns true or false</strong> depending on if the key is found and removed.
+        NOTE: the value for the key will also be removed from the Dictionary.
+        <p></p>
+        You do <strong><i>NOT</i></strong> need to check if the key is available before calling Remove. If the key is not found, false will be returned.
+        
+        <h2>Examples</h2>
+        <h3>How to remove a key and its value</h3>
+        <pre><code class="language-csharp">string itemToRemove = "Chicken Nuggets";
+bool wasRemoved = menu.Remove(itemToRemove);
+if(wasRemoved)
+    Console.WriteLine($"{itemToRemove} was removed from the menu.");
+else
+    Console.WriteLine($"{itemToRemove} was not found.");</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/4d41294e-2359-4b13-b31a-286f69128395?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add code on line 16 to remove <strong>Aquaman</strong> from the Dictionary.
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycgqa8fe?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+   Dictionary&lt;string, float&gt; starRanking = new Dictionary&lt;string, float&gt;();
+   {
+     {"Batman", 5.0F},
+     {"Superman", 4.5F},
+     {"Aquaman", 1.0F}
+   };
+   bool wasRemoved = starRanking.Remove("Aquaman");
+   foreach(KeyValuePair&lt;string,float&gt; ranking in starRanking)
+        Console.WriteLine($"{ranking.Key} : {ranking.Value} stars");
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e19fe4d5-6262-4c08-b18c-bda9774322f5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>GitHub: Troubleshooting</title>
+    <link rel="stylesheet" href="..\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>GitHub</b></div>
+        <a href="PG2_01_GitHub.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\GitHub.html" class="indent">Overview</a>
+        <a href=".\GitHub_Classroom.html" class="indent">Classroom Assignment</a>
+        <a href=".\GitHub_Cloning.html" class="indent">Cloning the Repo</a>
+        <a href=".\GitHub_CommitPush.html" class="indent">Commit and Push</a>
+        <a href=".\GitHub_Troubleshooting.html" class="indent active">Troubleshooting</a>
+
+        <div class="header"><b>Console</b></div>
+        <a href="PG2_01_MenuConsole.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\Console.html" class="indent">Overview</a>
+        <a href=".\Console_Memory.html" class="indent">Memory</a>
+        <a href=".\Console_Input.html" class="indent">Input</a>
+        <a href=".\Console_Converting.html" class="indent">Converting</a>
+        <a href=".\Console_Output.html" class="indent">Output</a>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>GitHub: Troubleshooting</H1>
+        You might encounter some problems working with GitHub. Below are some of the more common problems. 
+
+        <div class="block warning">
+            <p>If you still encounter problems, <strong>reach out to your course director as soon as possible.</strong></p>
+        </div>
+
+        <div class="block danger">
+            <h2>Problem: my "Commit all" button is grayed out!</h2>
+        </div>
+        <div class="block success">
+            <h3>Solution #1: Restart Visual Studio</h3>
+        </div>
+        <p>Sometimes Visual Studio's Git Changes tab does not refresh. Closing and reopening Visual Studio may fix the problem.</p>
+
+        <div class="block success">
+            <h3>Solution #2: Enter a commit message</h3>
+        </div>
+        The commit message is <strong>required</strong>. Be sure to enter a message in the text box that is above the Commit All button.<br>        
+        <img class="fit-picture bounding" src=".\GitChanges01.png" alt="Visual Studio Git Changes Tab"/>
+        
+        <div class="block success">
+            <h3>Solution #3: Configure GitHub</h3>
+        </div>
+        <img class="fit-picture bounding" src=".\GitConfigure.png" alt="Visual Studio Git Configure"/><br>
+        If you see a yellow box at the top of the Git Changes tab:<br>
+        
+        <ol>
+            <li>
+                Click the <strong>Configure link</strong> OR Open the Git settings dialog<br>
+                <img class="fit-picture bounding" src=".\GitSettings01.png" alt="Visual Studio Git Settings Menu"/>
+            </li>
+            
+            <li>
+                Ensure that your username and email address are the same as you used in GitHub<br>
+                <img class="fit-picture bounding" src=".\GitSettings02.png" alt="Visual Studio Git Settings Dialog"/>
+            </li>
+        </ol>
+
+        <div class="block danger">
+            <h2>Problem: my GitHub repo cannot be found!</h2>
+        </div>
+        
+        <div class="block success">
+            <h3>Solution: Fix GitHub Credentials</h3>
+        </div>
+        If you get a message saying that your GitHub repo cannot be found, it is likely that your machine is using different GitHub credentials.
+        <ol>
+            <li>
+                Open the account settings dialog. In the search bar at the top of Visual Studio, search for "account" and select the Account Settings.<br>
+                <img class="fit-picture bounding" src=".\GitCredentials01.png" alt="Visual Studio Search bar"/>
+            </li>
+            <li>
+                Remove and re-add your GitHub credentials. In the Account Settings dialog box, 
+                <ul>
+                    <li>Click remove next to the GitHub account that is listed</li>
+                    <li>Click the +Add button to re-enter your GitHub credentials.</li>
+                </ul>
+                <img class="fit-picture bounding" src=".\GitCredentials02.png" alt="Visual Studio Account Settings"/>
+            </li>
+        </ol>
+
+        <script src="..\Styles\prism.js"></script>
+        <script src="..\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dictionaries - Looping</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab1\Html\Lab1.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day05_Lecture\Html\Day05_Algorithms.html" class="indent"><b>Sorting</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><b>Dictionaries</b></div>
+        <a href="..\Slides\PG2_03_Dictionaries.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day03_Dictionaries.html">Dictionaries</a>
+        <a href="Day03_CreatingAdding.html">Creating and Adding</a>
+        <a href="Day03_Looping.html" class="active">Looping</a>
+        <a href="Day03_Removing.html">Removing</a>
+        <a href="Day03_CheckingKeys.html">Checking Keys</a>
+        <a href="Day03_UpdatingValues.html">Updating Values</a>
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Dictionaries - Looping</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2f7e735f-9bd5-489b-834d-2f66c4ace0b5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        The <strong><i>BEST</i></strong> way to loop over a dictionary is to use the <code class="language-csharp">foreach</code> loop.
+        <p></p>
+        The type of the foreach variable will be a <code class="language-csharp">KeyValuePair&lt;TKey,TValue&gt;</code> where the TKey and TValue will match the types used for the Dictionary.
+        <p></p>
+        <div class="block warning">
+            <p>If you try to modify the Dictionary in a foreach loop, you will get an exception.</p>
+        </div>
+        
+        <h2>Examples</h2>
+        <h3>Loop over the Dictionary</h3>
+        <pre><code class="language-csharp">foreach(KeyValuePair&lt;string,float&gt; menuItem in menu)
+{
+    //the key will be the name of the menu item (EX: Hamburger)
+    //the value will be the price of the menu item (EX: 1.99)
+    Console.WriteLine($"{menuItem.Key}: {menuItem.Value:C2}");
+}</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c2922bbb-7059-4ed3-a682-88b5e83a7012?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add a loop on line 16 that prints out each superhero and their star ranking.
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycetrfez?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+   Dictionary&lt;string, float&gt; starRanking = new Dictionary&lt;string, float&gt;();
+   {
+     {"Batman", 5.0F},
+     {"Superman", 4.5F},
+     {"Aquaman", 1.0F}
+   };
+   foreach(var keyValuePair in starRanking)
+   {
+        Console.WriteLine($"{keyValuePair.Key}: {keyValuePair.Value} stars");
+   }
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2bd73b2d-4bfe-4b1d-9f34-5188a0910162?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

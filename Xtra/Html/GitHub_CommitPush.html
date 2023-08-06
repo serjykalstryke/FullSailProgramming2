@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>GitHub: Commit and Push</title>
+    <link rel="stylesheet" href="..\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>GitHub</b></div>
+        <a href="PG2_01_GitHub.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\GitHub.html" class="indent">Overview</a>
+        <a href=".\GitHub_Classroom.html" class="indent">Classroom Assignment</a>
+        <a href=".\GitHub_Cloning.html" class="indent">Cloning the Repo</a>
+        <a href=".\GitHub_CommitPush.html" class="indent active">Commit and Push</a>
+        <a href=".\GitHub_Troubleshooting.html" class="indent">Troubleshooting</a>
+
+        <div class="header"><b>Console</b></div>
+        <a href="PG2_01_MenuConsole.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\Console.html" class="indent">Overview</a>
+        <a href=".\Console_Memory.html" class="indent">Memory</a>
+        <a href=".\Console_Input.html" class="indent">Input</a>
+        <a href=".\Console_Converting.html" class="indent">Converting</a>
+        <a href=".\Console_Output.html" class="indent">Output</a>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>GitHub: Commit and Push</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/06e01a83-b492-44da-92c3-fea4e3864665?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <h2>Commit and Push</h2>
+        When you're done working on your local code (or you simply want to back it up), you need to get the code into your GitHub repo. Currently, the code just resides on your local 
+        machine; it is <strong><i>NOT</i></strong> in GitHub.
+        <p>You first <strong>commit</strong> your code then <strong>push</strong> it to GitHub. </p>
+
+        <h2>1. Commit</h2>
+        
+        <div class="block info">
+            <p>To commit, you must have changed/added files in your local repo.</p>
+        </div>
+        
+        <div class="block warning">
+            <p>To open the Git Changes tab, go to Visual Studios View menu and select "Git Changes"<br>
+               <img class="fit-picture bounding" src=".\GitChanges00.png" alt="Visual Studio Git Changes Menu"/>
+            </p>
+        </div>
+        The commit is a 2-step process:
+        <ol>
+            <li>
+                Enter a message in the commit textbox.
+            </li>
+            <li>
+                Click the "Commit All" button.
+            </li>
+        </ol>        
+        <img class="fit-picture bounding" src=".\GitChanges01.png" alt="Visual Studio Git Changes Tab"/>
+        
+        <p>NOTE: if you've committed successfully, you'll see a message in the Git Changes tab that the commit was created locally. You'll also see that the outgoing number has increased. 
+        (the outgoing number can be seen below the branch dropdown)</p>
+        <img class="fit-picture bounding" src=".\GitChanges02.png" alt="Visual Studio Git Changes Tab: outgoing commit"/>
+
+        <h2>2. Push</h2>
+        Once you've made a commit, press the <strong>push button (the up arrow)</strong> in the Git Changes tab.<br>
+        <img class="fit-picture bounding" src=".\GitChanges03.png" alt="Visual Studio Git Changes Tab: push button"/>
+        
+        <p>NOTE: once the push is successful, you'll see a message in the Git Changes tab that you've successfully pushed. You'll also see that the outgoing number has been set back to 0. 
+            (the outgoing number can be seen below the branch dropdown)</p>
+            <img class="fit-picture bounding" src=".\GitChanges04.png" alt="Visual Studio Git Changes Tab: push successful"/>
+        
+        <div class="block danger">
+            <p>If this step fails, check the <a href=".\GitHub_Troubleshooting.html" class="indent">Troubleshooting</a> page for possible solutions.</p>
+        </div>
+
+    </div>
+    <script src="..\Styles\prism.js"></script>
+    <script src="..\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>File I/O Overview</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><b>File I/O</b></div>
+        <a href="..\Slides\PG2_04_FileInputOutput.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day04_FileInputOutput.html" class="indent active">File I/O Overview</a>
+        <a href="Day04_FilePaths.html" class="indent">File Paths</a>
+        <a href="Day04_Using.html" class="indent">Using Statement</a>
+        <a href="Day04_WritingCSV.html" class="indent">Writing CSV</a>
+        <a href="Day04_ReadingCSV.html" class="indent">Reading CSV</a>
+        <a href="Day04_NuGet.html" class="indent">NuGet Manager</a>
+        <a href="Day04_Serializing.html" class="indent">Serializing JSON</a>
+        <a href="Day04_Deserializing.html" class="indent">Deserializing JSON</a>
+
+        <div class="header"><a class="pageLink" href="Day02_Splitting.html" class="indent"><b>Splitting Strings</b></a></div>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>File I/O Overview</H1>
+        Pretty much every application uses File Input and Output to some degree. Learning how to work with files therefore is a vital developer skill.
+        <p></p>
+        <div class="block warning">
+            <p>To work with files, you need <strong><code class="language-csharp">using System.IO;</code></strong> at the top of the file.</p>
+        </div>
+
+        <h2>File I/O Classes</h2>
+        There are several classes in the System.IO namespace that we'll find useful:
+        <ul>
+            <li><strong>File</strong><br>Helpful methods:
+                <ul>
+                    <li>File.CreateText</li>
+                    <li>File.ReadAllText</li>
+                    <li>File.Exists</li>
+                </ul>
+            </li>
+            
+            <li><strong>Directory</strong><br>Helpful methods:
+                <ul>
+                    <li>Directory.CreateDirectory</li>
+                    <li>Directory.EnumerateFiles, GetFiles</li>
+                    <li>Directory.Exists</li>
+                </ul>
+            </li>
+            
+            <li><strong>Path</strong><br>Helpful methods:
+                <ul>
+                    <li>Path.ChangeExtension</li>
+                    <li>Path.Combine</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8ed44dd2-2256-4a71-b8fa-9462e6aee522?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <h2>File Types</h2>
+        Below are some common data storage files.
+
+        <h3>CSV - Comman-separated values</h3>        
+        <pre><code class="language-csv">"Thor,Captain America,Iron Man"</code></pre>
+
+        <h3>XML - eXtensible Markup Language</h3>
+        <pre><code class="language-xml"><xmp style="background-color: #f3f3f3;"><?xml version="1.0"?>
+<ArrogantSupers>
+    <SuperHero Name="Thor" />
+    <SuperHero Name="Captain America" />
+    <SuperHero Name="Iron Man" />
+</ArrogantSupers></xmp></code></pre>  
+        <!-- <div style="background-color: lightgray; margin: 10px 0px; padding-top: 1px;">
+        <xmp style="background-color: #f3f3f3;">
+            <?xml version="1.0"?>
+            <ArrogantSupers>
+                <SuperHero Name="Thor" />
+                <SuperHero Name="Captain America" />
+                <SuperHero Name="Iron Man" />
+            </ArrogantSupers>
+        </xmp></div>    -->
+             
+
+        <h3>JSON - Javascript Object Notation</h3>             
+        <pre><code class="language-json">{
+    "ArrogantSupers": [
+        {"Name": "Thor"},
+        {"Name": "Captain America"},
+        {"Name": "Iron Man"}
+    ]
+}</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/85798eb7-dc8c-483c-a59c-ab2a1021f654?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

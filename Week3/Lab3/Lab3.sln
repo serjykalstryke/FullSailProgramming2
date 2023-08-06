@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphics", "Graphics\Graphics.csproj", "{0F782A38-AD90-4E84-8177-2885EBB38B76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicsLibrary", "GraphicsLibrary\GraphicsLibrary.csproj", "{844245F8-60B1-4E41-9EF8-70B758652085}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PG2Input", "PG2Input\PG2Input.csproj", "{74ADC95A-AD6C-4EAC-B211-A3B273086111}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9E71FB4F-AB03-4F15-9AB0-C10087AB24C2}"
+	ProjectSection(SolutionItems) = preProject
+		LabDocument\Lab Graphics Lib.pdf = LabDocument\Lab Graphics Lib.pdf
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F782A38-AD90-4E84-8177-2885EBB38B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F782A38-AD90-4E84-8177-2885EBB38B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F782A38-AD90-4E84-8177-2885EBB38B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F782A38-AD90-4E84-8177-2885EBB38B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{844245F8-60B1-4E41-9EF8-70B758652085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844245F8-60B1-4E41-9EF8-70B758652085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844245F8-60B1-4E41-9EF8-70B758652085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844245F8-60B1-4E41-9EF8-70B758652085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74ADC95A-AD6C-4EAC-B211-A3B273086111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74ADC95A-AD6C-4EAC-B211-A3B273086111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74ADC95A-AD6C-4EAC-B211-A3B273086111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74ADC95A-AD6C-4EAC-B211-A3B273086111}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD262E80-2D41-4AF8-8A1B-D05DDB2913F2}
+	EndGlobalSection
+EndGlobal

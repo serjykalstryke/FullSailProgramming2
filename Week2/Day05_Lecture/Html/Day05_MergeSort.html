@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Merge Sort</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><b>Sorting</b></div>
+        <a href="..\Slides\PG2_05_Sorting.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day05_Algorithms.html" class="indent">Algorithms</a>
+        <a href="Day05_BubbleSort.html" class="indent">Bubble Sort</a>
+        <a href="Day05_Swapping.html" class="indent">Swapping</a>
+        <a href="Day05_Comparing.html" class="indent">Comparing Strings</a>
+        <a href="Day05_MergeSort.html" class="indent active">Merge Sort</a>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+
+        <p></p><br>
+    </div> 
+    
+    <div class="main">
+        <H1>Merge Sort</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/011cb109-c264-4081-99fb-5fffd1be57ca?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <h2>Pseudocode for Merge Sort</h2>
+        <h3>Split Step</h3>
+        
+        <div class="block warning">
+            <p>Merge Sort will <i>not</i> sort the parameter <strong>m</strong>. It will return a new list that is sorted.</p>
+        </div>
+        
+        <pre><code class="language-csharp">function merge_sort(list m) is
+
+    // Base case. A list of zero or one elements is sorted, by definition.
+    if length of m ≤ 1 then
+        return m
+
+    // Recursive case. First, divide the list into equal-sized sublists
+    // consisting of the first half and second half of the list.
+    // This assumes lists start at index 0.
+    var left := empty list
+    var right := empty list
+    for i = 0 to length(m) do
+        if i &lt; (length of m)/2 then
+            add m[i] to left
+        else
+            add m[i] to right
+
+    // Recursively sort both sublists.
+    left := merge_sort(left)
+    right := merge_sort(right)
+
+    // Then merge the now-sorted sublists.
+    return merge(left, right)</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a5f2d7f4-1313-4e6e-b838-6aee2370c113?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h3>Merge Step</h3>
+        
+        <pre><code class="language-csharp">function merge(left, right) is
+    var result := empty list
+    while left is not empty and right is not empty do
+    {
+        if first(left) &lt; first(right) then
+            add first(left) to result
+            remove first from left
+        else
+            add first(right) to result
+            remove first from right
+    }
+
+    // Either left or right may have elements left; consume them.
+    // (Only one of the following loops will actually be entered.)
+    while left is not empty do
+    {
+        add first(left) to result
+        remove first from left 
+    }
+
+    while right is not empty do
+    {
+        add first(right) to result
+        remove first from right
+    }
+
+    return result</code></pre>
+        
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a1ddbec0-cb22-423c-90f4-a0d0d7db201f?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/90fab810-824a-40fe-8ed6-3975fccf8c08?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

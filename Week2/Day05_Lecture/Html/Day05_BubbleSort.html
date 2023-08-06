@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bubble Sort</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><b>Sorting</b></div>
+        <a href="..\Slides\PG2_05_Sorting.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day05_Algorithms.html" class="indent">Algorithms</a>
+        <a href="Day05_BubbleSort.html" class="indent active">Bubble Sort</a>
+        <a href="Day05_Swapping.html" class="indent">Swapping</a>
+        <a href="Day05_Comparing.html" class="indent">Comparing Strings</a>
+        <a href="Day05_MergeSort.html" class="indent">Merge Sort</a>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+
+        <p></p><br>
+    </div> 
+    
+    <div class="main">
+        <H1>Bubble Sort</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d2029c3a-7634-4da1-95da-8fce25b6fa38?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <h2>Pseudocode for Bubble sort</h2>
+        
+        <div class="block warning">
+            <p>The pseudocode will not have C# specific requirements. You might have to add code specific to C# syntax.</p>
+        </div>
+        Translate this pseudocode to C#.
+        <pre><code class="language-csharp">procedure bubbleSort(A : list of sortable items)
+    n := length(A)
+    repeat
+        swapped := false
+        for i := 1 to n - 1 inclusive do
+            if A[i - 1] > A[i] then
+                swap(A, i - 1, i)
+                swapped = true
+            end if
+        end for
+        n := n - 1
+    while swapped
+end procedure</code></pre>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

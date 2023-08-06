@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - Types of Classes</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">  
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent"><b>OOP - Classes</b></a></div>
+        <!-- <a href="..\..\Day07_Lecture\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Classes.html" class="indent">Classes</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Fields.html" class="indent">Fields</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Properties.html" class="indent">Properties</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_COnstructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Methods.html" class="indent">Methods</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_Instances.html" class="indent">Instances</a>
+        <a href="..\..\Day07_Lecture\Html\Day07_ClassChallenge.html" class="indent">Class Challenge</a> -->
+
+        <div class="header"><b>Inheritance</b></div>
+        <a href="..\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day08_TypesOfClasses.html" class="indent active">Types of Classes</a>
+        <a href="Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="Day08_Downcasting.html" class="indent">Downcasting</a>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent"><b>Polymorphism</b></a></div>
+        <!-- <a href="..\..\Day09_Lecture\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\..\Day09_Lecture\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a> -->
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - Types of Classes</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2d1296d2-cb7a-418d-8bc0-8591052a3279?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <h2>Other Types of Classes</h2>
+        Besides just a standard class, here are some other kinds of classes:
+        <ul>
+            <li>
+                <h3>Abstract Classes</h3>
+                A class marked with the keyword <strong>abstract</strong>. You <strong><i>cannot</i></strong> create instances of abstract classes. 
+                The purpose of abstract classes is to serve as a base class for other classes.                
+                <code class="language-csharp">public abstract class A { }</code>
+            </li>
+            <li>
+                <h3>Static Classes</h3>
+                A class marked with the keyword <strong>static</strong>. You <strong><i>cannot</i></strong> create instances of static classes. <strong>Everything</strong>
+                defined in the static class <strong><i>must</i></strong> be marked as static. See below for more info on static classes.                
+                <code class="language-csharp">public static class B { }</code>
+            </li>            
+            <li>
+                <h3>Nested Classes</h3>
+                Defining a class inside of another class. The advantage is the nested class has access to the private members of the containing class.
+            </li>           
+            <li>
+                <h3>Sealed Classes</h3>
+                A class marked with the keyword <strong>sealed</strong>. This makes it so that you cannot derive a class from the sealed class.
+                <code class="language-csharp">public sealed class D { }</code>
+            </li>           
+            <li>
+                <h3>Partial Classes</h3>
+                A class marked with the keyword <strong>partial</strong>. This makes it so that you split the definition of a class across 2 or more files.                
+                <code class="language-csharp">public partial class E { }</code>
+            </li>
+        </ul>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/0fc06170-f2c0-48d2-ae90-478903d53624?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        
+        <h2>Examples</h2>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/0de82699-2bb2-4790-8f71-2d48675c9f7c?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1ce81d0b-c1b5-4a17-b246-4c18106549a9?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Using Statement</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><b>File I/O</b></div>
+        <a href="Day04_FileInputOutput.html" class="indent">File I/O Overview</a>
+        <a href="Day04_FilePaths.html" class="indent">File Paths</a>
+        <a href="Day04_Using.html" class="indent active">Using Statement</a>
+        <a href="Day04_WritingCSV.html" class="indent">Writing CSV</a>
+        <a href="Day04_ReadingCSV.html" class="indent">Reading CSV</a>
+        <a href="Day04_NuGet.html" class="indent">NuGet Manager</a>
+        <a href="Day04_Serializing.html" class="indent">Serializing JSON</a>
+        <a href="Day04_Deserializing.html" class="indent">Deserializing JSON</a>
+
+        <div class="header"><a class="pageLink" href="Day02_Splitting.html" class="indent"><b>Splitting Strings</b></a></div>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Using Statement</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/a1a17fb2-5cfe-4303-8db8-8cdb6a767c77?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        When reading or writing files, there are 3 steps you need to take:
+        <ol>
+            <li><h4>Open the file.</h4></li>
+            <li><h4>Read/Write the file.</h4></li>
+            <li><h4>CLOSE THE FILE!</h4></li>
+        </ol>
+        When opening a file, the operating system keeps a file handle open to the file. The operating system has a <strong>limited</strong> number of file handles therefore
+        you <strong><i>must</i></strong> close the file so the operating system can use the file handle for other applications.
+
+        <h2>The using statement</h2>
+        To ensure that the file is closed even if an exception happens, C# has a <strong><code class="language-csharp">using</code></strong> statement. NOTE: this using statement
+        is part of your code which is not the same as the using at the top of your file, which is part of the build process.
+
+        <h2>Examples</h2>
+        Here is an example of opening a file with the using statement.
+        
+        <pre><code class="language-csharp">//1. open the file.
+using (StreamWriter sw = new StreamWriter(filePath))
+{
+    //2. write to the file
+    sw.Write("Batman is better than Aquaman. Fact.");
+}//3. CLOSE THE FILE!!</code></pre>
+        
+        <div class="block info">
+            <p>The closing '}' of the using statement will ensure that the file is closed. It calls the Dispose method on the StreamWriter which calls Close on the file.</p>
+        </div>
+
+        Here is another way to use the using statement. This way does not use { } as a block for the code to read the file. Once the variable (sr) goes out of scope (the method ends),
+        the file will be closed.
+        
+        <pre><code class="language-csharp">static void ReadFile(string filePath)
+{
+    using StreamReader sr = new StreamReader(filePath);
+    string line = sr.ReadLine();
+    Console.WriteLine(line);
+}</code></pre>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

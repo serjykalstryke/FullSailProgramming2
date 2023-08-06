@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Console: Memory</title>
+    <link rel="stylesheet" href="..\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>GitHub</b></div>
+        <a href="PG2_01_GitHub.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\GitHub.html" class="indent">Overview</a>
+        <a href=".\GitHub_Classroom.html" class="indent">Classroom Assignment</a>
+        <a href=".\GitHub_Cloning.html" class="indent">Cloning the Repo</a>
+        <a href=".\GitHub_CommitPush.html" class="indent">Commit and Push</a>
+        <a href=".\GitHub_Troubleshooting.html" class="indent">Troubleshooting</a>
+
+        <div class="header"><b>Console</b></div>
+        <a href="PG2_01_MenuConsole.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href=".\Console.html" class="indent">Overview</a>
+        <a href=".\Console_Memory.html" class="indent active">Memory</a>
+        <a href=".\Console_Input.html" class="indent">Input</a>
+        <a href=".\Console_Converting.html" class="indent">Converting</a>
+        <a href=".\Console_Output.html" class="indent">Output</a>
+
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Console: Memory</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c45964ef-189f-4ac0-af6e-b24a4339431e?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        In .NET, there are 2 kinds of data types:
+        <ul>
+            <li>
+                <h3>value types</h3>
+                The data for value types are stored in the <strong>stack</strong>.<br>
+                These include the build-it data types like bool, int, float, double, etc. This does <i>NOT</i> include string.<br>
+                <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct" target="_blank" rel="noopener noreferrer">User-defined structures</a> are also included.
+                The <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/sizeof" target="_blank" rel="noopener noreferrer">memory allocated</a> for the value type is dependent on the data type.
+            </li>
+            <li>
+                <h3>reference types</h3>
+                These are the classes and arrays.<br>
+                The contents (data) for these are stored in the <strong>heap</strong>.<br>
+                The memory allocated for reference type variables are dependent on the application. If the application is 32-bit, 4 bytes will be allocated. If the application is 64-bit, 8 bytes will be allocated.
+            </li>
+        </ul>
+        
+        <h2>stack vs heap</h2>
+        <ul>
+            <li>Stack memory is allocated next to each other in the order that the variables are declared.</li>
+            <li>Heap memory is allocated but the data is <i>NOT</i> guaranteed to be next to each other.</li>
+        </ul>
+        <h4>Examples</h4>
+        <pre><code class="language-csharp">int iVar = 5;
+float fVar = 5.0F;
+int[] ids = new int[4] {4,3,1,9};
+string line = "PG2";</code></pre>
+
+        <img class="fit-picture bounding" src=".\Memory01.png" alt="Memory Example"/>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1b9b556e-5585-4df1-85c9-bc43756f4469?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+
+    </div>
+    <script src="..\Styles\prism.js"></script>
+    <script src="..\Styles\collapsible.js"></script>
+</body>
+</html>

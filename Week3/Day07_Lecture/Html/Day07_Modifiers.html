@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - Access Modifiers</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">   
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><b>OOP - Classes</b></div>
+        <a href="..\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="Day07_Classes.html" class="indent">Classes</a>
+        <a href="Day07_Modifiers.html" class="indent active">Access Modifiers</a>
+        <a href="Day07_Fields.html" class="indent">Fields</a>
+        <a href="Day07_Properties.html" class="indent">Properties</a>
+        <a href="Day07_Constructors.html" class="indent">Constructors</a>
+        <a href="Day07_Methods.html" class="indent">Methods</a>
+        <a href="Day07_Instances.html" class="indent">Instances</a>
+        <a href="Day07_ClassChallenge.html" class="indent">Class Challenge</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent"><b>Inheritance</b></a></div>
+        <!-- <a href="..\..\Day08_Lecture\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Downcasting.html" class="indent">Downcasting</a> -->
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent"><b>Polymorphism</b></a></div>
+        <!-- <a href="..\..\Day09_Lecture\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\..\Day09_Lecture\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a> -->
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - Access Modifiers</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/9ed4ec8b-91da-4469-a0fb-b618e1722b64?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        For the members inside of a class (fields, properties, methods), you can assign an 
+        <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers" target="_blank" rel="noopener noreferrer">access modifier</a> 
+        that controls the accessibility of the item (who can see it).
+        <br>
+        The commonly used access modifiers:
+        <ul>
+            <li>public</li>
+            <li>private</li>
+            <li>protected</li>
+        </ul>
+        
+        <h2>Public</h2>
+        Public means that <strong>all code</strong> can see it -- visible to everyone.
+        <pre><code class="language-csharp">public class Car
+{                
+    public ConsoleColor color = ConsoleColor.Green; 
+}</code></pre>
+        Everyone can <strong>see</strong> and <strong>edit</strong> the color field.
+        
+        
+        <h2>Private</h2>
+        Private means that <strong><i>ONLY</i>></strong> this class can see it -- visible to no one else.
+        <pre><code class="language-csharp">public class Car
+{                
+    private ConsoleColor color = ConsoleColor.Green; 
+}</code></pre>
+        <i>Only</i> the code inside the <strong>{ }</strong> of the Car class can see and edit color.
+        
+        
+        <h2>Protected</h2>
+        Protected means that <strong>this class</strong> and all other classes that <strong>derive</strong> from this class can see it.
+        <pre><code class="language-csharp">public class Car
+{                
+    protected ConsoleColor color = ConsoleColor.Green; 
+}
+public class ElectricCar : Car
+{
+    public void CarInfo() {
+        Console.WriteLine($"My color is {color}.");
+    }
+}</code></pre>
+        <i>Only</i> the code inside the <strong>{ }</strong> of the Car class and <strong>derived classes (ElectricCar)</strong> can see and edit color.
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>File Paths</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><b>File I/O</b></div>
+        <a href="Day04_FileInputOutput.html" class="indent">File I/O Overview</a>
+        <a href="Day04_FilePaths.html" class="indent active">File Paths</a>
+        <a href="Day04_Using.html" class="indent">Using Statement</a>
+        <a href="Day04_WritingCSV.html" class="indent">Writing CSV</a>
+        <a href="Day04_ReadingCSV.html" class="indent">Reading CSV</a>
+        <a href="Day04_NuGet.html" class="indent">NuGet Manager</a>
+        <a href="Day04_Serializing.html" class="indent">Serializing JSON</a>
+        <a href="Day04_Deserializing.html" class="indent">Deserializing JSON</a>
+
+        <div class="header"><a class="pageLink" href="Day02_Splitting.html" class="indent"><b>Splitting Strings</b></a></div>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>File Paths</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2e2749ed-7e66-494f-8e2f-36e0dd25a8c1?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <h2>Examples</h2>
+
+        <h3>Full Path</h3>
+        <pre><code> C:\PG2\Lectures\Week1\readme.txt</code></pre>     
+        Includes the drive (C:), the directory paths (PG2\Lectures\Week1) and the filename (readme.txt).   
+        <p></p>
+
+
+        <h3>Relative Path</h3>
+        <pre><code> ..\Lectures\Week1\readme.txt</code></pre>    
+        This path starts in the current working directory, moves up 1 folder (<strong>..\</strong>) then goes into the Lectures\Week1 folder to find the readme.txt file.
+        <br>
+        Relative Path movement:<br>
+        ".\" - means the current directory<br>
+        "..\" - means to move up one directory on the path.
+        <p></p>
+
+        <div class="block info">
+            <p>The current working directory is the directory that the application is currently using. Usually, this is the directory where the application is located.</p>
+        </div>
+        <p></p>
+
+        <h3>Current Directory</h3>
+        <pre><code>readme.txt</code></pre>
+        When all you specify is the name of the file, your application will use the current working directory.
+
+        <p></p>
+        <h2>Extensions</h2>
+        The <strong>extension</strong> on your filename are the characters after the last '.' in the filename. NOTE: filenames can have any number of '.' in them. 
+        The extension is serves as information to the operating system about what could be in the file and which applications are associated with files of that type. 
+        Extensions are also information to people to help us know what could be in the file.
+
+        <h3>Working with Extensions</h3>
+        The <strong>Path</strong> class can be used to work with extensions (check them, get them, modify them).
+
+        <h4>Path.HasExtension</h4>
+        Will return true if the filepath has an extension and false if the filepath does not have an extension.
+        
+        <pre><code class="language-csharp">string filePath = @"C:\PG2\Lectures\Week1\readme.txt";
+bool hasExtension = Path.HasExtension(filePath);
+Console.WriteLine($"{filePath} has extension? {hasExtension}");</code></pre>
+        This example prints <strong>C:\PG2\Lectures\Week1\readme.txt has extension? true</strong>
+
+        <h4>Path.GetExtension</h4>
+        Will return the extension including the '.' if it has an extension and String.Empty if it does not.
+        
+        <pre><code class="language-csharp">string filePath = @"C:\PG2\Lectures\Week1\readme.txt";
+string extension = Path.GetExtension(filePath);
+Console.WriteLine($"{filePath} extension? {extension}");</code></pre>
+        This example prints <strong>C:\PG2\Lectures\Week1\readme.txt extension? .txt</strong>
+
+        <h4>Path.ChangeExtension</h4>
+        Will return a new string with the filePath where the extension has been changed.
+        
+        <pre><code class="language-csharp">string filePath = @"C:\PG2\Lectures\Week1\readme.txt";
+string newFilePath = Path.ChangeExtension(filePath, "gif");
+Console.WriteLine($"new File Path: {newFilePath}");</code></pre>
+        This example prints <strong>new File Path: C:\PG2\Lectures\Week1\readme.gif</strong>
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add code on line 11 so the "oldFile.json" is printed instead of "oldFile.txt".
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ycq8kjn8?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    string filePath = "oldFile.txt";
+	filePath = Path.ChangeExtension(filePath, ".json"); 
+    Console.WriteLine(filePath);
+}</code></pre>      
+            </div>
+        </div>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

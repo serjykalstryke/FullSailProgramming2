@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Deserializing JSON</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><b>File I/O</b></div>        
+        <a href="..\Slides\PG2_04_FileInputOutput.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day04_FileInputOutput.html" class="indent">File I/O Overview</a>
+        <a href="Day04_FilePaths.html" class="indent">File Paths</a>
+        <a href="Day04_Using.html" class="indent">Using Statement</a>
+        <a href="Day04_WritingCSV.html" class="indent">Writing CSV</a>
+        <a href="Day04_ReadingCSV.html" class="indent">Reading CSV</a>
+        <a href="Day04_NuGet.html" class="indent">NuGet Manager</a>
+        <a href="Day04_Serializing.html" class="indent">Serializing JSON</a>
+        <a href="Day04_Deserializing.html" class="indent active">Deserializing JSON</a>
+
+        <div class="header"><a class="pageLink" href="Day02_Splitting.html" class="indent"><b>Splitting Strings</b></a></div>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Deserializing JSON</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/117e1b83-6326-442d-be77-8bc618eba250?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <strong>Deserializing</strong> is taking object data stored in whatever format and converting it back into objects to be used by your code.
+        <p>
+            We are going to deserialize some objects in JSON format. We'll use the Json.NET library to help us.
+        </p>
+        
+        Working with files in your code can cause exceptions. It is best to <strong>program defensively</strong> to keep your application from crashing.
+        <ul>
+            <li>Use <strong>File.Exists</strong> when opening a file to read it. Don't assume the file is there.</li>
+            <li>Use <strong>try-catch</strong> when trying to deserialize because the text being deserialized might not be in the correct format.</li>
+        </ul>
+
+        <h2>Examples</h2>
+        <div class="block warning">
+            <p>To work with Json.NET, you need <strong><code class="language-csharp">using Newtonsoft.Json;</code></strong> at the top of the file.</p>
+        </div>
+        <pre><code class="language-csharp">if(File.Exists(jsonFilePath)) //make sure the file is there
+{
+    string superText = File.ReadAllText(jsonFilePath);//open, read, close the file. Returns all the json data in 1 string
+
+    Console.WriteLine("-------DESERIALIZING---------");
+    try
+    {
+        //DeserializeObject could throw an exception if the superText has the wrong format.
+        Superhero superhero = JsonConvert.DeserializeObject&lt;Superhero&gt;(superText);
+        Console.WriteLine($"{superhero.Name} ({superhero.SecretIdentity}) {superhero.Power}");
+    }
+    catch (Exception)
+    {
+        Console.WriteLine("ERROR deserializing -- wrong format.")
+    }
+}
+else
+    Console.WriteLine($"ERROR: {jsonFilePath} does not exists!!");</code></pre>
+        
+        <div class="block warning">
+            <p>
+                <strong><code class="language-csharp">Superhero superhero = JsonConvert.DeserializeObject&lt;Superhero&gt;(superText);</code></strong><br>
+                The type (Superhero) between the &lt; &nbsp; &gt; must match the type on the left-hand side of the '='.
+            </p>
+        </div>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ad8a1ea8-fccb-4a9e-bc40-45d382e97513?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ba21e07b-e02d-494a-8baa-8867c6c80bd5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

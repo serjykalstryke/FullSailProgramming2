@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Multiple Delimiters</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><a class="pageLink" href="Day04_FileInputOutput.html" class="indent"><b>File I/O Overview</b></a></div>
+
+        <div class="header"><b>Splitting Strings</b></div>
+        <a href="..\Slides\PG2_02_SplittingStrings.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day02_Splitting.html">Splitting Strings</a>
+        <a href="Day02_MultiDelims.html" class="active">Multiple Delimiters</a>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+        
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Multiple Delimiters</H1>
+        Sometimes the CSV string has multiple delimiters that separate the data.<br>
+        In this case, you need to pass a <code class="language-cshar">char[]</code> to the Split method.
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/3cfb81ba-998d-4049-bc34-82e1aafa86d7?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        
+        <h2>Examples</h2>
+        In this example, our data has 2 delimiters: | and ?.
+        <pre><code class="language-csharp">string supersCSV = "Thor|Captain America|Iron Man?Thanos";
+char[] delimiters = new char[] {'|', '?'};
+string[] supers = supersCSV.Split(delimiters);</code></pre>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/34282ead-89d5-4163-9191-88926fb18b09?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+           
+        <div class="block warning">
+            <p>If the CSV string has delimiters that are right next to each other (EX: "Hello;;Hi"), Split will return an empty entry for the spot between the adjacent delimiters.<br>
+            To remove the empty entries from the array that is returned from Split, use the <strong><code>StringSplitOptions.RemoveEmptyEntries</code></strong> enum when calling Split. </p>
+        </div>
+        <pre><code class="language-csharp">string supersCSV = "Thor|Captain America|Iron Man|?Batman?Superman?Wonder Woman?";
+char[] delimiters = new char[] {'|', '?'};
+string[] supers = supersCSV.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);</code></pre>
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            
+            <ol>
+                <li>Split the string (use multiple delimiters and handle empty entries).</li>
+                <li>Print the array that is returned.</li>
+            </ol>
+            <p>
+                <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/csharp/3yc86ux7f?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public static void Main(string[] args)
+{
+    string characterInfo = "Level:5;Health:90;Skills:DoubleJump||Dodge|Roll";
+    char[] delimiters = new char[] {':',';','|'};
+    string[] values = characterInfo.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+    foreach(string item in values)
+        Console.WriteLine(item);
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c3184157-2be4-4e0f-a3a9-e19903c2b9b5?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

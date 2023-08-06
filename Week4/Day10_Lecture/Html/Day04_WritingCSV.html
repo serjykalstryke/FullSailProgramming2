@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Writing CSV</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab4\Html\Lab4.html">Lab 4: Card Wars</a>
+
+        <div class="header"><b>File I/O</b></div>
+        <a href="Day04_FileInputOutput.html" class="indent">File I/O Overview</a>
+        <a href="Day04_FilePaths.html" class="indent">File Paths</a>
+        <a href="Day04_Using.html" class="indent">Using Statement</a>
+        <a href="Day04_WritingCSV.html" class="indent active">Writing CSV</a>
+        <a href="Day04_ReadingCSV.html" class="indent">Reading CSV</a>
+        <a href="Day04_NuGet.html" class="indent">NuGet Manager</a>
+        <a href="Day04_Serializing.html" class="indent">Serializing JSON</a>
+        <a href="Day04_Deserializing.html" class="indent">Deserializing JSON</a>
+
+        <div class="header"><a class="pageLink" href="Day02_Splitting.html" class="indent"><b>Splitting Strings</b></a></div>
+        
+        <div class="header"><a class="pageLink" href="..\..\Day11_Lecture\Html\Day11_IntroToCPP.html" class="indent"><b>Intro to C++</b></a></div>
+        
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>Writing CSV</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/0997938a-0316-4a99-965d-433198b4be93?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <strong>Comma-separated values (CSV)</strong> files have data stored where the individual pieces of data are separated by a <strong>delimiter</strong>.
+        A delimiter is a char (or string) that is used as a separator. Example: "Batman,Superman,Wonder Woman". In this example, ',' is the delimiter that separates the data.
+        <p>
+            When writing out CSV data to a file, be sure to use a delimiter to separate the data.
+        </p>
+
+        <p>To write the CSV text file, use the <strong><code class="language-csharp">StreamWriter</code></strong> class.</p>
+
+        <h2>Examples</h2>
+        This example will write out the values of the best object in CSV format.
+        <pre><code class="language-csharp">Superhero best = new Superhero() { Name = "Batman", SecretIdentity = "Bruce Wayne", Power = Powers.Money };
+char delimiter = ';';
+//1. open the file.
+using (StreamWriter sw = new StreamWriter(filePath))
+{
+    //2. write to the file
+    sw.Write(best.Name);
+    sw.Write(delimiter);
+    sw.Write(best.SecretIdentity);
+    sw.Write(delimiter);
+    sw.Write(best.Power);
+}//3. CLOSE THE FILE!!</code></pre>
+
+        Here is the output generated:
+        <pre><code>Batman;Bruce Wayne;Money</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/1d9986fd-2599-4603-9f4b-f0f22d8aadc9?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/0b415bde-e388-4a38-890c-a4ead88b64d1?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Swapping</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab2\Html\Lab2.html">Lab 2: Heroes V2</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day04_Lecture\Html\Day04_Recursion.html" class="indent"><b>Recursion</b></a></div>
+
+        <div class="header"><b>Sorting</b></div>
+        <a href="..\Slides\PG2_05_Sorting.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day05_Algorithms.html" class="indent">Algorithms</a>
+        <a href="Day05_BubbleSort.html" class="indent">Bubble Sort</a>
+        <a href="Day05_Swapping.html" class="indent active">Swapping</a>
+        <a href="Day05_Comparing.html" class="indent">Comparing Strings</a>
+        <a href="Day05_MergeSort.html" class="indent">Merge Sort</a>
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day06_Linear.html" class="indent"><b>Searching</b></a></div>
+
+        <div class="header"><a class="pageLink" href="..\..\Day06_Lecture\Html\Day03_Dictionaries.html" class="indent"><b>Dictionaries</b></a></div>
+
+        <p></p><br>
+    </div> 
+    
+    <div class="main">
+        <H1>Swapping</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/393473fe-063b-419e-854f-53dbd4aebb7c?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <h2>How to swap</h2>
+        Swapping means to swap the positions of 2 items in the list. You use the indexes of the items when swapping.
+
+        <h2>Examples</h2>
+        <h3>Using Indexes</h3>
+        To swap numbers 45 and 34 in the array so that the final array is {1,12,23,34,45}.
+        <pre><code class="language-csharp">int[] nums = new int[] {1,12,23,45,34};
+int index1 = 3; //3 is the index of 45 in the array
+int index2 = 4; //4 is the index of 34 in the array
+int temp = nums[index1]; //save the value at index1 to a temporary variable
+nums[index1] = nums[index2]; //overwrite the value stored at index1
+nums[index2] = temp;    //overwrite the value stored at index2</code></pre>
+        <h3>Using Tuples</h3>
+        A more concise way to swap using tuples in C#
+        <pre><code class="language-csharp">int[] nums = new int[] {1,12,23,45,34};
+int index1 = 3; //3 is the index of 45 in the array
+int index2 = 4; //4 is the index of 34 in the array
+(nums[index2], nums[index1]) = (nums[index1], nums[index2]);</code></pre>
+        
+        <h2>Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/76a00b51-8792-4c75-abc7-12c57acd67ee?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>

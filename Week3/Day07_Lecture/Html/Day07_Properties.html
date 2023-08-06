@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>OOP - Properties</title>
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\coursestyles.css">   
+    <link rel="stylesheet" href="..\..\..\Xtra\Styles\prism.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+<body>
+    <div class="sidenav">
+        <a href="..\..\..\PG2_CourseMaterials.html">Home</a>
+
+        <div class="header"><b>Lab</b></div>
+        <a href="..\..\Lab3\Html\Lab3.html">Lab 3: Graphics Library</a>
+
+        <div class="header"><b>OOP - Classes</b></div>
+        <a href="..\Slides\PG2_07_Classes.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="Day07_OOP.html" class="indent">Object-Oriented Programming</a>
+        <a href="Day07_4Pillars.html" class="indent">The 4 Pillars</a>
+        <a href="Day07_Classes.html" class="indent">Classes</a>
+        <a href="Day07_Modifiers.html" class="indent">Access Modifiers</a>
+        <a href="Day07_Fields.html" class="indent">Fields</a>
+        <a href="Day07_Properties.html" class="indent active">Properties</a>
+        <a href="Day07_Constructors.html" class="indent">Constructors</a>
+        <a href="Day07_Methods.html" class="indent">Methods</a>
+        <a href="Day07_Instances.html" class="indent">Instances</a>
+        <a href="Day07_ClassChallenge.html" class="indent">Class Challenge</a>
+
+        <div class="header"><a class="pageLink" href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent"><b>Inheritance</b></a></div>
+        <!-- <a href="..\..\Day08_Lecture\Slides\PG2_08_Inheritance.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_TypesOfClasses.html" class="indent">Types of Classes</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Inheritance.html" class="indent">Inheritance</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Constructors.html" class="indent">Constructors</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Upcasting.html" class="indent">Upcasting</a>
+        <a href="..\..\Day08_Lecture\Html\Day08_Downcasting.html" class="indent">Downcasting</a> -->
+
+
+        <div class="header"><a class="pageLink" href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent"><b>Polymorphism</b></a></div>
+        <!-- <a href="..\..\Day09_Lecture\Slides\PG2_09_Polymorphism.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Polymorphism.html" class="indent">Polymorphism</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overwriting.html" class="indent">Overwriting</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Overloading.html" class="indent">Overloading</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_ExtensionMethods.html" class="indent">Extension Methods</a>
+
+        <div class="header"><b>Good Programming</b></div>
+        <a href="..\..\Day09_Lecture\Slides\PG2_09_GoodSoftware.pdf" target="_blank" rel="noopener noreferrer">[Lecture Slides]</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SOLID.html" class="indent">S.O.L.I.D.</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Cohesion.html" class="indent">Cohesion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_SingleResponsibility.html" class="indent">Single-Responsibility</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_Coupling.html" class="indent">Coupling</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_DependencyInversion.html" class="indent">Dependency Inversion</a>
+        <a href="..\..\Day09_Lecture\Html\Day09_IsaHasa.html" class="indent">Is-A vs. Has-A</a> -->
+
+        <p></p><br>
+    </div> 
+    <div class="main">
+        <H1>OOP - Properties</H1>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/9a5aeae3-671d-432c-b0e0-43383c7f493f?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+        <strong>Properties</strong> are the gate-keepers of your fields. They are meant to control the access to fields.
+        <br>Traditionally in languages like C++, this was handled with getter and setter methods.<br>
+        In C#, getters and setters have been formalized into the language as <strong>properties</strong>.        
+        
+        <h2>Naming Convention</h2>
+        When naming C# properties, follow <a href="https://techterms.com/definition/pascalcase" target="_blank" rel="noopener noreferrer">Pascal casing</a>. 
+        Pascal casing starts every word in a compound word with a capital letter. Example: ThisIsACompoundWord
+        
+        <h2>Access Modifiers</h2>
+        Usually you want your properties to be <code class="language-csharp">public</code>. They are the public facing "data" of your class.
+        
+        <h2>Get and Set</h2>
+        There are 2 parts to a property: the <strong>get</strong> method (accessor) and the <strong>set</strong> method (mutator).
+
+        <pre><code class="language-csharp">public class Car
+{
+    private int _yearOfCar;//hide it with private
+
+    public int Year
+    {
+        get 
+        {
+            return _yearOfCar;
+        }
+        
+        set 
+        {
+            if(value > 1908)
+                _yearOfCar = value;
+        }
+    }
+}</code></pre>
+        <h5>Get</h5>
+        The <strong>get</strong> provides access to the value of the field.
+        It is the same as writing a getter method like this:
+        <pre><code class="language-csharp">public int GetYear() {return _yearOfCar;}</code></pre>
+
+        <h5>Set</h5>
+        The <strong>set</strong> allows modification of the field.
+        It is the same as writing a setter method like this:
+        <pre><code class="language-csharp">public void SetYear(int value) {  if(value > 1908) _yearOfCar = value;  }</code></pre>
+        
+        <h5>Usage</h5>
+        When using the property, the compiler will figure out whether to call the get or the set, depending on how it is being used.
+        
+        <pre><code class="language-csharp">Car myCar = new Car();
+myCar.Year = 1965; //this will call the set of the Year property
+Console.WriteLine($"The year of your mustang is {myCar.Year}."); //this will call the get of the Year property</code></pre>
+
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/f3683dc4-45af-4f91-a15b-1b2d812d7e7d?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+        <h2>Full Properties</h2>
+        Full properties are properties that are paired with a backing field. In the examples above, _yearOfCar is the backing field to the Year property.
+         
+        <div class="block info">
+            <p>If you write any code inside the get or set, a backing field is required.</p>
+        </div>
+        <h2>Auto Properties</h2>
+        Auto properties are properties where the backing field and code for the get and set are provided by the compiler. You <i>only</i> need to define the property.
+         
+        <div class="block info">
+            <p>Auto properties are good if you want to provide a light-weight property with differing access modifiers on the get/set</p>
+        </div>
+        
+        <pre><code class="language-csharp">public class Car
+{
+    public string Make {get; private set;}
+}</code></pre>
+        When creating an auto property, you don't write code for the get and set. In this example, the get is public but the set is private. 
+        So code outside the class can see the value but cannot change it. That is something you <strong><i>cannot</i></strong> do with a field.
+
+        
+        <h2>Challenges!</h2>
+        
+        <div class="tryit">
+            <H3>Try it!</H3>
+            Add a <strong>Model</strong> property to the Car class so that the message printed is <strong>The model of your car is Cybertruck.</strong>
+            <p>
+                <iframe frameBorder="0" height="450px"  
+                src="https://onecompiler.com/embed/csharp/3ydd9sqr6?hideNew=true&hideLanguageSelection=true&hideTitle=true&theme=dark&hideStdin=true" width="100%"></iframe>
+            </p>
+            <button type="button" class="collapsible">Solution</button>
+            <div class="content">
+                <pre><code class="language-csharp">public class Car
+{
+    private string _modelOfCar = "Cybertruck";
+    public string Model
+    {
+        get { return _modelOfCar; }
+        set { _modelOfCar = value; }
+    }
+}</code></pre>      
+            </div>
+        </div>
+        <h2>Extra Challenges!</h2>
+        <p>
+            <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/71f99b34-43aa-4ffc-a9e0-7b918d7caab6?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+        </p>
+
+    </div>
+    <script src="..\..\..\Xtra\Styles\prism.js"></script>
+    <script src="..\..\..\Xtra\Styles\collapsible.js"></script>
+</body>
+</html>
