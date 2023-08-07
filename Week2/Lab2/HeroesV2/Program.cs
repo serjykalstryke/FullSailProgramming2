@@ -58,7 +58,7 @@ namespace HeroesV2
                         //
                         Input.GetMenuChoice("Sort by? ", sortBy, out int sortBySelection);
                         SortBy sortByChoice = (SortBy)sortBySelection;
-
+                        HeroesDB.SortByAttribute(sortByChoice);
                         break;
                     case 3:
                         //
@@ -79,7 +79,9 @@ namespace HeroesV2
                         //      Using Input.GetString (see example above), ask the user to enter the name of the hero to find.
                         //      Call the FindHero method and pass the string the user entered.
                         //
-
+                        string heroNameForSearch = string.Empty;
+                        Input.GetString("Enter the name of the hero to find: ", ref heroNameForSearch);
+                        HeroesDB.FindHero(heroNameForSearch);
                         break;
                     case 4:
                         //
@@ -91,6 +93,7 @@ namespace HeroesV2
                         //      Loop over the dictionary and print each key and the count of the list for each key.
                         //
                         //      In Main (here), add code to case 4 to call the PrintGroupCounts method.
+                        HeroesDB.PrintGroupCounts();
                         break;
                     case 5:
                         //
@@ -112,7 +115,9 @@ namespace HeroesV2
                         //      Using Input.GetString (see example above), ask the user to enter the Letter of the hero to find.
                         //      Call the FindHeroesByLetter method and pass the string the user entered.
                         //
-
+                        string letter = string.Empty;
+                        Input.GetString("Enter the Letter of the hero to find: ", ref letter);
+                        HeroesDB.FindHeroesByLetter(letter);
                         break;
                     case 6:
                         //
@@ -136,7 +141,9 @@ namespace HeroesV2
                         //      Using Input.GetString (see example above), ask the user to enter the name of the hero.
                         //      Call the RemoveHero method and pass the string the user entered.
                         //
-
+                        string heroNameForRemoval = string.Empty;
+                        Input.GetString("Enter the name of the hero: ", ref heroNameForRemoval);
+                        HeroesDB.RemoveHero(heroNameForRemoval);
                         break;
                     case 7:
                         LabTests.RunTests();

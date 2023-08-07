@@ -1,0 +1,15 @@
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\bin\Debug\net6.0\Day05.exe
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\bin\Debug\net6.0\Day05.deps.json
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\bin\Debug\net6.0\Day05.runtimeconfig.json
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\bin\Debug\net6.0\Day05.dll
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\bin\Debug\net6.0\Day05.pdb
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.AssemblyInfo.cs
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.dll
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\refint\Day05.dll
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.pdb
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\Day05.genruntimeconfig.cache
+\\Mac\Home\Documents\Code\pg2-2308-serjykalstryke\Week2\Day05_Lecture\Day05\obj\Debug\net6.0\ref\Day05.dll

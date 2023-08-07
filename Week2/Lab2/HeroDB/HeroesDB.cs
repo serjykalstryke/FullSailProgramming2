@@ -103,6 +103,58 @@ namespace HeroDB
         //      NOTE: to compare heroes, use the Hero.Compare method.
         //      EX: int compResult = Hero.Compare(hero1, hero2, sortBy); //returns -1 is hero1 < hero2, 0 if hero1 = hero2, or 1 is hero1 > hero2
         //
+        public static List<Hero> MergeSort(List<Hero> heroes, SortBy sortBy)
+        {
+            if (heroes.Count <= 1)
+                return heroes;
+
+            List<Hero> left = new List<Hero>();
+            List<Hero> right = new List<Hero>();
+
+            int middle = heroes.Count / 2;
+            for (int i = 0; i < middle; i++)
+                left.Add(heroes[i]);
+            for (int i = middle; i < heroes.Count; i++)
+                right.Add(heroes[i]);
+
+            left = MergeSort(left, sortBy);
+            right = MergeSort(right, sortBy);
+
+            return Merge(left, right, sortBy);
+        }
+
+        public static List<Hero> Merge(List<Hero> left, List<Hero> right, SortBy sortBy)
+        {
+            List<Hero> result = new List<Hero>();
+
+            while (left.Count > 0 || right.Count > 0)
+            {
+                if (left.Count > 0 && right.Count > 0)
+                {
+                    if (Hero.Compare(left[0], right[0], sortBy) <= 0)
+                    {
+                        result.Add(left[0]);
+                        left.RemoveAt(0);
+                    }
+                    else
+                    {
+                        result.Add(right[0]);
+                        right.RemoveAt(0);
+                    }
+                }
+                else if (left.Count > 0)
+                {
+                    result.Add(left[0]);
+                    left.RemoveAt(0);
+                }
+                else
+                {
+                    result.Add(right[0]);
+                    right.RemoveAt(0);
+                }
+            }
+            return result;
+        }
 
 
 
@@ -117,6 +169,14 @@ namespace HeroDB
         //          NOTE: print the hero ID, selected attribute, and name(see screenshot).
         //          To get the selected attribute, call the GetSortByAttribute on each hero.
         //
+        public static void SortByAttribute(SortBy sortBy)
+        {
+            List<Hero> sortedHeroes = MergeSort(_heroes, sortBy);
+            foreach (var hero in sortedHeroes)
+            {
+                Console.WriteLine($"{hero.Id,3}: {hero.GetSortByAttribute(sortBy)} {hero.Name}");
+            }
+        }
 
 
 
@@ -135,6 +195,24 @@ namespace HeroDB
         //      Implement the BinarySearch method in the HeroesDB class.
         //      Your code must follow the pseudo-code. You will find the pseudocode for the methods in the lab document (see the Solution Items in the Solution Explorer)
         //
+        public static int BinarySearch(List<Hero> heroes, string heroName)
+        {
+            int low = 0;
+            int high = heroes.Count - 1;
+
+            while (low <= high)
+            {
+                int mid = (low + high) / 2;
+                if (heroes[mid].Name == heroName)
+                    return mid;
+                else if (string.Compare(heroes[mid].Name, heroName, StringComparison.OrdinalIgnoreCase) < 0)
+                    low = mid + 1;
+                else
+                    high = mid - 1;
+            }
+
+            return -1;
+        }
 
 
 
@@ -149,6 +227,14 @@ namespace HeroDB
         //      otherwise
         //          print "<insert heroName> was found at index <insert found index>"
         //
+        public static void FindHero(string heroName)
+        {
+            int index = BinarySearch(_heroes, heroName);
+            if (index == -1)
+                Console.WriteLine($"{heroName} is not found");
+            else
+                Console.WriteLine($"{heroName} was found at index {index}");
+        }
 
 
 
@@ -169,6 +255,19 @@ namespace HeroDB
         //      Else If it is in the dictionary already,
         //          then add the hero to the list that is stored for that key.
         //
+        public static void GroupHeroes()
+        {
+            _groupedHeroes = new Dictionary<string, List<Hero>>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (var hero in _heroes)
+            {
+                string initialLetter = hero.Name.Substring(0, 1);
+                if (!_groupedHeroes.ContainsKey(initialLetter))
+                    _groupedHeroes[initialLetter] = new List<Hero>();
+
+                _groupedHeroes[initialLetter].Add(hero);
+            }
+        }
 
 
 
@@ -179,6 +278,16 @@ namespace HeroDB
         //      Add a method called PrintGroupCounts to the HeroesDB class.
         //      In the method, if _groupedHeroes is null, call the GroupHeroes method from part B-1.
         //      Loop over the dictionary and print each key and the count of the list for each key.
+        public static void PrintGroupCounts()
+        {
+            if (_groupedHeroes == null)
+                GroupHeroes();
+
+            foreach (var entry in _groupedHeroes)
+            {
+                Console.WriteLine($"Letter '{entry.Key}': {entry.Value.Count} heroes");
+            }
+        }
 
 
 
@@ -200,6 +309,23 @@ namespace HeroDB
         //      Else,
         //          loop over the list of heroes for the key and print the ID and name.
         //
+        public static void FindHeroesByLetter(string letter)
+        {
+            if (_groupedHeroes == null)
+                GroupHeroes();
+
+            if (_groupedHeroes.ContainsKey(letter))
+            {
+                foreach (var hero in _groupedHeroes[letter])
+                {
+                    Console.WriteLine($"{hero.Id}: {hero.Name}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"No heroes were found that start with the letter {letter}");
+            }
+        }
 
 
         // Part C-2: RemoveHero
@@ -215,6 +341,38 @@ namespace HeroDB
         //              NOTE: if removing the hero makes the list empty for the letter, then remove the letter (which is the key) from the dictionary.
         //          If BinarySearch returns -1 (meaning the hero is not in the list), print a message that the hero was notfound.
         //
+        public static void RemoveHero(string heroName)
+        {
+            if (_groupedHeroes == null)
+                GroupHeroes();
+
+            string initialLetter = heroName.Substring(0, 1);
+
+            if (_groupedHeroes.ContainsKey(initialLetter))
+            {
+                List<Hero> heroesList = _groupedHeroes[initialLetter];
+                int index = BinarySearch(heroesList, heroName);
+
+                if (index != -1)
+                {
+                    Hero heroToRemove = heroesList[index];
+                    heroesList.RemoveAt(index);
+                    _heroes.Remove(heroToRemove);
+                    Console.WriteLine($"{heroName} was removed.");
+
+                    if (heroesList.Count == 0)
+                        _groupedHeroes.Remove(initialLetter);
+                }
+                else
+                {
+                    Console.WriteLine($"{heroName} was not found.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{heroName} was not found.");
+            }
+        }
 
     }
 }

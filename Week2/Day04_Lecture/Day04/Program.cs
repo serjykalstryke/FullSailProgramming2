@@ -41,6 +41,11 @@ namespace Day04
             List<string> A = new() { "Wonder Woman", "Batman", "Superman", "Flash", "Aquaman", "Blue Beetle", "Lobo" };
             //call your bubble sort method and pass the list to it
             //print the list after calling the method to prove it was sorted
+            BubbleSort(A);
+            foreach (var item in A)
+            {
+                Console.WriteLine(item);
+            }
 
 
 
@@ -78,11 +83,45 @@ namespace Day04
             //
             //call Bats here
             //
+            Bats(0);
             Console.WriteLine();
             List<int> b = new() { 66, 65, 84, 77, 65, 78, 33, 33 };
             foreach (var item in b) Console.Write((char)item);
             Console.WriteLine();
 
+        }
+
+        static void BubbleSort(List<string> A)
+        {
+            int n = A.Count;
+
+            bool swapped;
+            do
+            {
+                swapped = false;
+                for (int i = 1; i < n; i++)
+                {
+                    if (A[i - 1].CompareTo(A[i]) > 0)
+                    {
+                        var temp = A[i - 1];
+                        A[i - 1] = A[i];
+                        A[i] = temp;
+                        swapped = true;
+                    }
+                }
+                n--;
+            } while (swapped); 
+        }
+
+        static void Bats(int i)
+        {
+            if (i < 100)
+            {
+                Console.Write((char)78);
+                Console.Write((char)65);
+                Console.Write(' ');
+                Bats(i + 1);
+            }
         }
 
 
@@ -103,5 +142,7 @@ namespace Day04
                 Console.Write(' ');
             }
         }
+
+
     }
 }

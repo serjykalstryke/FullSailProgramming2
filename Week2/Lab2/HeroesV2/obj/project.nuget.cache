@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0mIAvTqlqsahRA0QkVt+X5ch9n2t9xalMM//Xi6PhKJBQ3qSjLNY+AGmQKKVA6U+jMhsx5ruVoXYG5UhOmPTxw==",
+  "success": true,
+  "projectFilePath": "\\\\Mac\\Home\\Documents\\Code\\pg2-2308-serjykalstryke\\Week2\\Lab2\\HeroesV2\\HeroesV2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\davidstinnett\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -58,6 +58,7 @@ namespace Day04
              
             */
 
+            Dictionary<string, int> grades = new Dictionary<string, int>();
 
 
 
@@ -86,6 +87,10 @@ namespace Day04
                     Add students and grades to your dictionary that you created in CHALLENGE 2.
              
             */
+            grades["John"] = 85;
+            grades["Jane"] = 90;
+            grades["Doe"] = 75;
+            grades["Alice"] = 88;
 
 
 
@@ -113,6 +118,10 @@ namespace Day04
                     Loop over your grades dictionary and print each student name and grade.
              
             */
+            foreach (KeyValuePair<string, int> entry in grades)
+            {
+                Console.WriteLine($"Student Name: {entry.Key}, Grade: {entry.Value}");
+            }
 
 
 
@@ -129,8 +138,8 @@ namespace Day04
                 1) ContainsKey(key)
                 2) TryGetValue(key, out value)
                
-            */            
-            if(backpack.ContainsKey(Weapon.Axe))
+            */
+            if (backpack.ContainsKey(Weapon.Axe))
                 Console.WriteLine($"{Weapon.Axe} count: {backpack[Weapon.Axe]}");
 
             if(backpack.TryGetValue(Weapon.Spear, out int spearCount))
@@ -145,6 +154,15 @@ namespace Day04
                     else print out a message that the student was not found
              
             */
+            string searchStudent = "Alice";
+            if (grades.TryGetValue(searchStudent, out int studentGrade))
+            {
+                Console.WriteLine($"{searchStudent}'s grade is {studentGrade}.");
+            }
+            else
+            {
+                Console.WriteLine($"{searchStudent} was not found in the grades dictionary.");
+            }
 
 
 
@@ -173,6 +191,26 @@ namespace Day04
                     Pick any student and curve the grade (add 5) that is stored in the grades dictionary
              
             */
+            string studentToUpdate = "John";
+            if (grades.ContainsKey(studentToUpdate))
+            {
+                grades[studentToUpdate] += 5;
+            }
+
+
+
+        }
+
+        public static int LinearSearch(List<int> list, int searchItem)
+        {
+            for (int i=0; i<list.Count; i++)
+            {
+                if (list[i]==searchItem)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }

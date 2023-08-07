@@ -55,7 +55,27 @@ namespace Day06
             Random rando = new Random();
             Dictionary<string, double> grades = new();
             foreach (var student in students)
-                grades.Add(student, rando.NextDouble() * 100);
+                grades.Add(student, Math.Round(rando.NextDouble() * 100, 2));
+
+            Console.WriteLine("Current students and their grades: ");
+            foreach (var entry in grades)
+                Console.WriteLine($"{entry.Key}: {entry.Value}");
+
+            Console.Write("Enter the name of the student you want to remove: ");
+            string studentToRemove = Console.ReadLine();
+
+            bool wasRemoved = grades.Remove(studentToRemove);
+
+            if (wasRemoved)
+            {
+                Console.WriteLine($"{studentToRemove} was successfully removed");
+                foreach (var entry in grades)
+                    Console.WriteLine($"{entry.Key}: {entry.Value}");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {studentToRemove} was NOT found.");
+            }
             
         }
     }
